@@ -14,36 +14,50 @@
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="profile" href="http://gmpg.org/xfn/11">
+
+<!-- Stylesheets -->
+<link rel="stylesheet" href="<?php bloginfo('stylesheet_directory'); ?>/assets/css/bootstrap-grid.min.css">
+
+<!-- Javascript -->
+<script src="<?php bloginfo('stylesheet_directory'); ?>/assets/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
 
 <?php wp_head(); ?>
 </head>
 
 <body <?php body_class(); ?>>
-<div id="page" class="site">
-	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'fkc' ); ?></a>
 
-	<header id="masthead" class="site-header" role="banner">
-		<div class="site-branding">
-			<?php
-			if ( is_front_page() && is_home() ) : ?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-			<?php else : ?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-			<?php
-			endif;
+<!-- HEADER
+===================================================== -->
+<header id="headermain">
+	<div class="container">
+		
+		<div class="navbar navbar-header">
+			<a class="l-pull-left" href="index.html"><img class="logo" src="<?php bloginfo('stylesheet_directory'); ?>/assets/img/fernkopie-logo.jpg" alt="Fernkopie Logo" title="Fernkopie Logo"></a>
+			<a role="button" class="l-pull-right is-hidden-md navbar-nav-open" href="#0"><img src="<?php bloginfo('stylesheet_directory'); ?>/assets/img/burger-button.svg" title="Button to open the main navigation menu on mobile devices or tablets"></a>
+		</div><!-- /.navbar navbar-header -->
+		
 
-			$description = get_bloginfo( 'description', 'display' );
-			if ( $description || is_customize_preview() ) : ?>
-				<p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
-			<?php
-			endif; ?>
-		</div><!-- .site-branding -->
+	
 
-		<nav id="site-navigation" class="main-navigation" role="navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'fkc' ); ?></button>
-			<?php wp_nav_menu( array( 'theme_location' => 'menu-1', 'menu_id' => 'primary-menu' ) ); ?>
-		</nav><!-- #site-navigation -->
-	</header><!-- #masthead -->
+		<nav class="navbar navbar-nav collapsed">
+			<a href="#" role="button" class="is-hidden-md navbar-nav-close l-bold">schließen</a>
+			<ul>
+				<li><a href="projekte-all.html">Projekte</a></li>
+				<li class="is-hidden-md"><a href="#0">visuelle Identitäten</a></li>
+				<li class="is-hidden-md"><a href="#0">Informationsmedien</a></li>
+				<li class="is-hidden-md"><a href="#0">Schrift im Raum</a></li>
+				<li class="is-hidden-md"><a href="#0">ePublish</a></li>
+				<li><a href="archiv-all.html">Archiv</a>
+					<ul class="dropdown is-hidden">
+						<li><a href="#0">Editorial</a></li>
+						<li><a href="#0">Plakat</a></li>
+						<li><a href="#0">Briefmarken</a></li>
+					</ul>
+				</li>
+				<li><a href="kontakt.html">Info</a></li>
+			</ul>
+		</nav>
+		
+	</div><!-- /.container -->
 
-	<div id="content" class="site-content">
+</header>
