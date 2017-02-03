@@ -8,6 +8,38 @@
  *
  * @package Fernkopie_Custom
  */
+ 
+ 	// Collect the Category-links for use in the navigation menu
+	
+    // Get the ID of a given category
+    $category_id = get_cat_ID( 'visuelle-identitaeten' );
+    // Get the URL of this category
+    $link_vis_ident = get_category_link( $category_id );
+    
+    // Get the ID of a given category
+    $category_id = get_cat_ID( 'informationsmedien' );
+    // Get the URL of this category
+    $link_info_med = get_category_link( $category_id );  
+    
+    // Get the ID of a given category
+    $category_id = get_cat_ID( 'schrift-im-raum' );
+    // Get the URL of this category
+    $link_schrift_raum = get_category_link( $category_id );  
+    
+    // Get the ID of a given category
+    $category_id = get_cat_ID( 'editorial' );
+    // Get the URL of this category
+    $link_editorial = get_category_link( $category_id );  
+    
+	// Get the ID of a given category
+    $category_id = get_cat_ID( 'plakat' );
+    // Get the URL of this category
+    $link_plakat = get_category_link( $category_id );  
+    
+    // Get the ID of a given category
+    $category_id = get_cat_ID( 'briefmarken' );
+    // Get the URL of this category
+    $link_briefmarken = get_category_link( $category_id );  
 
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
@@ -26,35 +58,106 @@
 
 <body <?php body_class(); ?>>
 
+
+
 <!-- HEADER
 ===================================================== -->
 <header id="headermain">
 	<div class="container">
 		
+		
+		
+		<!-- NAVBAR HEADER
+		===================================================== -->
 		<div class="navbar navbar-header">
-			<a class="l-pull-left" href="index.html"><img class="logo" src="<?php bloginfo('stylesheet_directory'); ?>/assets/img/fernkopie-logo.jpg" alt="Fernkopie Logo" title="Fernkopie Logo"></a>
-			<a role="button" class="l-pull-right is-hidden-md navbar-nav-open" href="#0"><img src="<?php bloginfo('stylesheet_directory'); ?>/assets/img/burger-button.svg" title="Button to open the main navigation menu on mobile devices or tablets"></a>
+			
+			<!-- NAVBAR BRAND -->
+			<a class="l-pull-left" href="<?php echo get_home_url(); ?>">
+				<img class="logo" src="<?php bloginfo('stylesheet_directory'); ?>/assets/img/fernkopie-logo.jpg" alt="Fernkopie Logo" title="Fernkopie Logo">
+			</a>
+			
+			<!-- NAVBAR BURGER-BUTTON -->
+			<a role="button" class="l-pull-right is-hidden-md navbar-nav-open" href="#0">
+				<img src="<?php bloginfo('stylesheet_directory'); ?>/assets/img/burger-button.svg" title="Button to open the main navigation menu on mobile devices or tablets">
+			</a>
+			
 		</div><!-- /.navbar navbar-header -->
 		
+		
 
-	
-
+		<!-- NAVBAR NAVIGATION MENU
+		===================================================== -->
 		<nav class="navbar navbar-nav collapsed">
-			<a href="#" role="button" class="is-hidden-md navbar-nav-close l-bold">schließen</a>
+			<a href="#" role="button" class="is-hidden-md navbar-nav-close l-bold">
+				schließen
+			</a>
+			
 			<ul>
-				<li><a href="projekte-all.html">Projekte</a></li>
-				<li class="is-hidden-md"><a href="#0">visuelle Identitäten</a></li>
-				<li class="is-hidden-md"><a href="#0">Informationsmedien</a></li>
-				<li class="is-hidden-md"><a href="#0">Schrift im Raum</a></li>
-				<li class="is-hidden-md"><a href="#0">ePublish</a></li>
-				<li><a href="archiv-all.html">Archiv</a>
-					<ul class="dropdown is-hidden">
-						<li><a href="#0">Editorial</a></li>
-						<li><a href="#0">Plakat</a></li>
-						<li><a href="#0">Briefmarken</a></li>
-					</ul>
+				<li>
+					<a href="<?php echo get_post_type_archive_link( 'projekte' ); ?>">
+						Projekte
+					</a>
 				</li>
-				<li><a href="kontakt.html">Info</a></li>
+				
+				<li class="is-hidden-md">
+					<a href="<?php echo esc_url( $link_vis_ident ); ?>">
+						visuelle Identitäten
+					</a>
+				</li>
+				
+				<li class="is-hidden-md">
+					<a href="<?php echo esc_url( $link_info_med ); ?>">
+						Informationsmedien
+					</a>
+				</li>
+				
+				<li class="is-hidden-md">
+					<a href="<?php echo esc_url( $link_schrift_raum); ?>">
+						Schrift im Raum
+					</a>
+				</li>
+				
+				<!-- Für den Moment versteckt, bis die Inhalte stehen. Zum wieder
+					 Sichtbar machen einfach "is-hidden" durch "is-hidden-md" ersetzen -->
+				<li class="is-hidden">
+					<a href="#0">
+						ePublish
+					</a>
+				</li>
+				
+				<li>
+					<a href="<?php echo get_post_type_archive_link( 'archiv' ); ?>">
+						Archiv
+					</a>
+					
+					<ul class="dropdown dropdown-unless-desktop">
+						<li>
+							<a href="<?php echo esc_url( $link_editorial ); ?>">
+								Editorial
+							</a>
+						</li>
+						
+						<li>
+							<a href="<?php echo esc_url( $link_plakat ); ?>">
+								Plakat
+							</a>
+						</li>
+						
+						<li>
+							<a href="<?php echo esc_url( $link_briefmarken ); ?>">
+								Briefmarken
+							</a>
+						</li>
+					</ul>
+					
+				</li>
+				
+				<li>
+					<a href="<?php echo get_page_link(50); ?>">
+						Info
+					</a>
+				</li>
+					
 			</ul>
 		</nav>
 		

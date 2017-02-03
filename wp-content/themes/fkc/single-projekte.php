@@ -109,7 +109,7 @@ $project_id 				= get_the_ID();
 				<?php endif; ?>
 
 			
-			<!-- Bilder -->
+			<!-- Weitere Inhalte -->
 				<div class="project-details-side-info">
 					<div class="col-xs-6 project-details-side-info-pic">
 						<a href="#0">

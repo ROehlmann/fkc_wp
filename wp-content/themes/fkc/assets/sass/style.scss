@@ -414,7 +414,7 @@ a:hover, a:active, a:focus, a:visited {
 
 
 .is-hidden {
-	display: none;
+	display: none !important; 
 }
 
 
@@ -648,6 +648,14 @@ a:hover, a:active, a:focus, a:visited {
 .navbar-nav-close {
    float: right;
 }
+
+
+
+/* Dropdown Module */
+.dropdown {
+	display: none;
+}
+
 
 /* Projects-all Module */
 /* Weiter generalisieren und wiederverwende, wenn andere Sections ähnlich aufgebaut sind */

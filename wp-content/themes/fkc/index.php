@@ -11,6 +11,8 @@
  *
  * @package Fernkopie_Custom
  */
+      
+
 
 get_header(); ?>
 
@@ -28,7 +30,7 @@ get_header(); ?>
 					<div class="leistungsspektrum">
 						<p class="vh1">
 							Wir gestalten 
-							<a href="#0">visuelle Identitäten</a>,
+							<a href="">visuelle Identitäten</a>,
 							<a href="#0">Informationsmedien</a> und 
 							<a href="#0">Schrift im Raum</a>.
 						</p>
@@ -168,7 +170,9 @@ dass die besten Lösungen an der Schnittstelle von inhaltlicher Auseinandersetzu
 						<p class="l-center-text vh2">Wir erstellen aus Ihren Printprodukten interaktive Erlebnisse für Tablets. Dabei werden vorhandene ­InDesign-Dateien überarbeitet und um neue Dimensionen erweitert, wie z. B. 360°-Ansichten, Hyperlinks, ­Diashows, Audio- und Video-Dateien. Als Ergebnis erhalten Sie eine App für mobile Endgeräte.</p>
 					</div><!-- /.e-publishing-text-->
 					
-					<p class="l-center-text vh6"><a class="l-bold" href="#0">mehr erfahren →</a></p>
+					<!-- Für den Moment versteckt, bis die Inhalte stehen. Zum wieder
+						 Sichtbar machen einfach "is-hidden" entfernen -->
+					<p class="l-center-text vh6 is-hidden"><a class="l-bold" href="#0">mehr erfahren →</a></p>
 				</div><!-- /.col -->
 			</div><!-- /.row -->
 				

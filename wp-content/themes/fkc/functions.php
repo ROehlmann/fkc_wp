@@ -44,7 +44,7 @@ function fkc_setup() {
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
-		'menu-1' => esc_html__( 'Primary', 'fkc' ),
+		'primary' => esc_html__( 'Primary', 'fkc' ),
 	) );
 
 	/*
@@ -141,3 +141,90 @@ require get_template_directory() . '/inc/customizer.php';
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
+
+
+
+
+
+
+
+
+
+
+
+/**
+ * Make it possible to add the archive for a Custom Post Type to the Navigation Menu
+ * script from: http://stackoverflow.com/questions/20879401/how-to-add-custom-post-type-archive-to-menu
+ */
+ 
+add_action('admin_head-nav-menus.php', 'wpclean_add_metabox_menu_posttype_archive');
+
+function wpclean_add_metabox_menu_posttype_archive() {
+add_meta_box('wpclean-metabox-nav-menu-posttype', 'Custom Post Type Archives', 'wpclean_metabox_menu_posttype_archive', 'nav-menus', 'side', 'default');
+}
+
+function wpclean_metabox_menu_posttype_archive() {
+$post_types = get_post_types(array('show_in_nav_menus' => true, 'has_archive' => true), 'object');
+
+if ($post_types) :
+    $items = array();
+    $loop_index = 999999;
+
+    foreach ($post_types as $post_type) {
+        $item = new stdClass();
+        $loop_index++;
+
+        $item->object_id = $loop_index;
+        $item->db_id = 0;
+        $item->object = 'post_type_' . $post_type->query_var;
+        $item->menu_item_parent = 0;
+        $item->type = 'custom';
+        $item->title = $post_type->labels->name;
+        $item->url = get_post_type_archive_link($post_type->query_var);
+        $item->target = '';
+        $item->attr_title = '';
+        $item->classes = array();
+        $item->xfn = '';
+
+        $items[] = $item;
+    }
+
+    $walker = new Walker_Nav_Menu_Checklist(array());
+
+    echo '<div id="posttype-archive" class="posttypediv">';
+    echo '<div id="tabs-panel-posttype-archive" class="tabs-panel tabs-panel-active">';
+    echo '<ul id="posttype-archive-checklist" class="categorychecklist form-no-clear">';
+    echo walk_nav_menu_tree(array_map('wp_setup_nav_menu_item', $items), 0, (object) array('walker' => $walker));
+    echo '</ul>';
+    echo '</div>';
+    echo '</div>';
+
+    echo '<p class="button-controls">';
+    echo '<span class="add-to-menu">';
+    echo '<input type="submit"' . disabled(1, 0) . ' class="button-secondary submit-add-to-menu right" value="' . __('Add to Menu', 'andromedamedia') . '" name="add-posttype-archive-menu-item" id="submit-posttype-archive" />';
+    echo '<span class="spinner"></span>';
+    echo '</span>';
+    echo '</p>';
+
+endif;
+}
+
+
+
+/**
+* Custom. Make Custom Post Types use category and tag templates.
+*/
+function wpse28145_add_custom_types( $query ) {
+    if( is_tag() || is_category() && $query->is_main_query() ) {
+
+        // this gets all post types:
+        $post_types = get_post_types();
+
+        // alternately, you can add just specific post types using this line instead of the above:
+        // $post_types = array( 'post', 'your_custom_type' );
+
+        $query->set( 'post_type', $post_types );
+    }
+}
+add_filter( 'pre_get_posts', 'wpse28145_add_custom_types' );
+

@@ -302,7 +302,7 @@ a:hover, a:active, a:focus, a:visited {
   padding-top: 100px; }
 
 .is-hidden {
-  display: none !important; }
+  display: none; }
 
 @media screen and (min-width: 768px) {
   .is-hidden-sm {
@@ -411,12 +411,12 @@ a:hover, a:active, a:focus, a:visited {
 .navbar-nav {
   float: right; }
 
-.navbar-nav > ul,
-.navbar-nav > ol {
+.navbar-nav ul,
+.navbar-nav ol {
   list-style: none; }
 
-.navbar-nav > ul > li,
-.navbar-nav > ol > li {
+.navbar-nav ul > li,
+.navbar-nav ol > li {
   display: inline-block;
   margin-left: 30px; }
 
@@ -429,7 +429,7 @@ a:hover, a:active, a:focus, a:visited {
   width: 340px;
   height: 100%;
   padding: 35px;
-  background-color: #F8E81C;
+  background-color: #1D1C1B;
   -webkit-transition: right 1.2s;
   -moz-transition: right 1.2s;
   -ms-transition: right 1.2s;
@@ -448,11 +448,11 @@ a:hover, a:active, a:focus, a:visited {
 .navbar-nav.collapsed li {
   margin-bottom: 25px; }
 
-.navbar-nav.collapsed > ul {
+.navbar-nav.collapsed ul {
   margin-top: 60px;
   padding-left: 0; }
 
-.navbar-nav.collapsed > ul > li {
+.navbar-nav.collapsed ul > li {
   display: block;
   margin-left: 0; }
 
@@ -461,10 +461,6 @@ a:hover, a:active, a:focus, a:visited {
 
 .navbar-nav-close {
   float: right; }
-
-/* Dropdown Module */
-.dropdown {
-  display: none; }
 
 /* Projects-all Module */
 /* Weiter generalisieren und wiederverwende, wenn andere Sections ähnlich aufgebaut sind */
