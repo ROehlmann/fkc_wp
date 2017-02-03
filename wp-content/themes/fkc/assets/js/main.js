@@ -4,6 +4,8 @@ jQuery(document).ready(function(){
 	var screenWidth = initialScreenWidth;
 	var minWidthDesktop = 992;
 	
+	var $dropdownParent = $('.dropdown-unless-desktop').closest('li');
+	
 	function dropdown(event) {
 	event.preventDefault();
 	$(this).find(".dropdown").slideToggle();
@@ -16,15 +18,13 @@ jQuery(document).ready(function(){
       	$('#headermain').find('.navbar-nav').removeClass('collapsed');
       
 	  	/* Dropdown: Remove dropdown handler from click event on ".dropdown-unless-desktop" items */
-	    var dropdownParent = $('.dropdown-unless-desktop').closest('li');
-		dropdownParent.off("click", dropdown);
+		$dropdownParent.off("click", dropdown);
       
       	/* if page is deskop-view, make Home - Philosophie Section: make font-weight normal */
 	  	$('#philosophie-section').find('.vh2').removeClass('l-bold');
     } else {
 	    /* Dropdown: Bind dropdown handler to click event on ".dropdown-unless-desktop" items */
-	    var dropdownParent = $('.dropdown-unless-desktop').closest('li');
-		dropdownParent.on("click", dropdown);
+		$dropdownParent.on("click", dropdown);
     }
 	
 	
@@ -33,26 +33,29 @@ jQuery(document).ready(function(){
 	/* When resizing */
 	/* Show navigation menu (and other changes) when screen size >= 992px */
 	$(window).resize(function() {
+		var $navbarNav = $('#headermain').find('.navbar-nav');
+		
 		screenWidth = $(window).width();
 		if( screenWidth >= minWidthDesktop ) {
 			/* Change navbar from collapsed to expanded state */
-			$('#headermain').find('.navbar-nav').removeClass('collapsed');
-			$('#headermain').find('.navbar-nav').removeClass('open');
+			$navbarNav.removeClass('collapsed');
+			$navbarNav.removeClass('open');
 			
 			/* Dropdown: Remove dropdown handler from click event on ".dropdown-unless-desktop" items */
-		    var dropdownParent = $('.dropdown-unless-desktop').closest('li');
-			dropdownParent.off("click", dropdown);
+			$dropdownParent.off("click", dropdown);
+			
+			/* Dropdown: Hide dropdown menus that have been left open while resizing to desktop view */
+			$('.dropdown-unless-desktop').hide();
 			
 			/* Home - Philosophie Section: make font-weight normal */
 			$('#philosophie-section').find('.vh2').removeClass('l-bold');
     	} else {
 	    	/* Change navbar from expanded to collapsed state */
-			$('#headermain').find('.navbar-nav').addClass('collapsed');
+			$navbarNav.addClass('collapsed');
 			
 			/* Dropdown: Bind dropdown handler to click event on ".dropdown-unless-desktop" items */
-			var dropdownParent = $('.dropdown-unless-desktop').closest('li');
-			dropdownParent.off("click", dropdown);
-			dropdownParent.on("click", dropdown);
+			$dropdownParent.off("click", dropdown); // remove any existing dropdown-handler bound to this element to prevent adding it several times making the dropdown open and close again ang again
+			$dropdownParent.on("click", dropdown);
 			
 			/* Home - Philosophie Section: make font-weight bold */
 			$('#philosophie-section').find('.vh2').addClass('l-bold');
