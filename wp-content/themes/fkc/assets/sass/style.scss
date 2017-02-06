@@ -512,7 +512,9 @@ a:hover, a:active, a:focus, a:visited {
 	list-style: none;
 	padding-left: 0;
 }
-
+.l-inline {
+	display: inline;
+}
 
 
 
@@ -662,6 +664,13 @@ a:hover, a:active, a:focus, a:visited {
 .projects-all-list {
 	margin-top: 40px;
 }
+.projects-all-list li > p::after {
+	content: " | ";
+}
+.projects-all-list li:last-child > p::after {
+	content: "";
+}
+
 @media screen and (min-width: 1200px) {
 	.projects-all-list {
 		margin-top: 60px;
