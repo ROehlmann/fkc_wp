@@ -1,17 +1,8 @@
 <?php
-/**
- * The main template file
- *
- * This is the most generic template file in a WordPress theme
- * and one of the two required files for a theme (the other being style.css).
- * It is used to display a page when nothing more specific matches a query.
- * E.g., it puts together the home page when no home.php file exists.
- *
- * @link https://codex.wordpress.org/Template_Hierarchy
- *
- * @package Fernkopie_Custom
- */
-      
+/*
+	Template Name: Home Page
+*/
+
  	// Collect the Category-links
 	
     // Get the ID of a given category
@@ -47,6 +38,8 @@
 
 get_header(); ?>
 
+
+
 <!-- CONTENT
 ===================================================== -->
 <div id="contentmain">
@@ -76,7 +69,7 @@ get_header(); ?>
 
 	<!-- Projekte
     ===================================================== -->
-	<div id="projectsheader" class="container">
+    <div id="projectsheader" class="container">
 		
 		<div class="row">
 			<div class="col-xs-8 col-lg-10 col-lg-offset-1">
@@ -85,80 +78,57 @@ get_header(); ?>
 		</div><!-- /.row -->
 		
 	</div><!-- /.container -->
-		
-	<div id="projects-section" class="container">
-		<!-- Projektauswahlmatrix -->
-		<div class="row">
+	
+    
+	<?php 
+		//Define the loop based on arguments
+		$query_featured_projects_home = new WP_Query( array('post_type' => 'projekte'));
+ 
+	    //Display the contents
+	    if ( $query_featured_projects_home->have_posts() ) : ?>
+	    
+		    <div id="projects-section" class="container">
+				<!-- Projektauswahlmatrix -->
+				<div class="row">
+		    
+				    <?php while ( $query_featured_projects_home->have_posts() ) : $query_featured_projects_home->the_post();
+				    	// Könnte ich auch direkt in den Loop mit einbauen mit einer meta_query 
+				    	$show_on_main_page				= get_field('show_on_main_page');
+				    	
+				    	if ( $show_on_main_page != true ) { continue; }
+				    	
+				    	$customer						= get_field('customer');
+				    	$project_title 					= get_field('project_title');
+				    	$feature_image					= get_field('feature_image'); 
+				    ?>
 			
-			<div class="col-xs-12 col-lg-6">
-				<figure class="gallery-item">
-					<a href="projekte-einzel.html">
-						<img src="<?php bloginfo('stylesheet_directory'); ?>/assets/img/beispielbilder/light-1-1.jpg">
-						<figcaption>
-							<h3 class="l-bold vh6">Waldelfen AG</h3>
-							<p class="vh6">Waldelfen-Publikation</p>
-						</figcaption>
-					</a>
-				</figure>
-			</div><!-- /.col -->
+					<div class="col-xs-12 col-lg-6">
+						<figure class="gallery-item">
+							<a href="<?php echo get_permalink();?>" >
+								<img src="<?php echo $feature_image['url']; ?>" alt="<?php echo $feature_image['alt']; ?>" >
+								<figcaption>
+									<h3 class="l-bold vh6"><?php echo $customer; ?></h3>
+									<p class="vh6"><?php echo $project_title; ?></p>
+								</figcaption>
+							</a>
+						</figure>
+					</div><!-- /.col -->
 			
-			<div class="col-xs-12 col-lg-6">
-				<figure class="gallery-item">
-					<a href="projekte-einzel.html">
-						<img src="<?php bloginfo('stylesheet_directory'); ?>/assets/img/beispielbilder/light-2-1.jpg">
-						<figcaption>
-							<h3 class="l-bold vh6">Verband deutscher Pilzsammler e.V.</h3>
-							<p class="vh6">Designer-Pilzkorb</p>
-						</figcaption>
-					</a>
-				</figure>
-			</div><!-- /.col -->
-			
-			<div class="col-xs-12 col-lg-6">
-				<figure class="gallery-item">
-					<a href="projekte-einzel.html">
-						<img src="<?php bloginfo('stylesheet_directory'); ?>/assets/img/beispielbilder/light-3-1.jpg">
-						<figcaption>
-							<h3 class="l-bold vh6">Wiesenfreunde e.V.</h3>
-							<p class="vh6">Rasenmähersounddesign</p>
-						</figcaption>
-					</a>
-				</figure>
-			</div><!-- /.col -->
-			
-			<div class="col-xs-12 col-lg-6">
-				<figure class="gallery-item">
-					<a href="projekte-einzel.html">
-						<img src="<?php bloginfo('stylesheet_directory'); ?>/assets/img/beispielbilder/light-4.jpg">
-						<figcaption>
-							<h3 class="l-bold vh6">Straßenfeger gGmbH</h3>
-							<p class="vh6">Laub verteilt</p>
-						</figcaption>
-					</a>
-				</figure>
-			</div><!-- /.col -->
-			
-			<div class="col-xs-12 col-lg-6">
-				<figure class="gallery-item">
-					<a href="projekte-einzel.html">
-						<img src="<?php bloginfo('stylesheet_directory'); ?>/assets/img/beispielbilder/light-5.jpg">
-						<figcaption>
-							<h3 class="l-bold vh6">Yorck Kinogruppe GmbH</h3>
-							<p class="vh6">Licht gedimmt</p>
-						</figcaption>
-					</a>
-				</figure>
-			</div><!-- /.col -->
-		</div><!-- /.row -->
-		
-		<!-- Link zu weiteren Projekten -->
-		<div class="row">
-			<div class="col-xs-12 col-lg-6">
-				<p class="vh6"><a href="projekte-all.html">mehr Projekte →</a></p>
-			</div><!-- /.col -->
-		</div><!-- /.row --> 
-		
-	</div><!-- /.container -->
+					<?php endwhile; ?>
+					
+				</div><!-- /.row -->
+		    
+				<!-- Link zu weiteren Projekten -->
+				<div class="row">
+					<div class="col-xs-12 col-lg-6">
+						<p class="vh6"><a href="<?php echo get_post_type_archive_link( 'projekte' ); ?>">mehr Projekte →</a></p>
+					</div><!-- /.col -->
+				</div><!-- /.row --> 
+				
+			</div><!-- /.container -->
+	    <?php endif; ?>
+		<?php wp_reset_postdata(); ?>		
+
 
 
 

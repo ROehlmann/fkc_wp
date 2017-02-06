@@ -12,32 +12,32 @@
  	// Collect the Category-links for use in the navigation menu
 	
     // Get the ID of a given category
-    $category_id = get_cat_ID( 'visuelle-identitaeten' );
+    $category_id = get_cat_ID( 'Visuelle Identitäten' );
     // Get the URL of this category
     $link_vis_ident = get_category_link( $category_id );
     
     // Get the ID of a given category
-    $category_id = get_cat_ID( 'informationsmedien' );
+    $category_id = get_cat_ID( 'Informationsmedien' );
     // Get the URL of this category
     $link_info_med = get_category_link( $category_id );  
     
     // Get the ID of a given category
-    $category_id = get_cat_ID( 'schrift-im-raum' );
+    $category_id = get_cat_ID( 'Schrift im Raum' );
     // Get the URL of this category
     $link_schrift_raum = get_category_link( $category_id );  
     
     // Get the ID of a given category
-    $category_id = get_cat_ID( 'editorial' );
+    $category_id = get_cat_ID( 'Editorial' );
     // Get the URL of this category
     $link_editorial = get_category_link( $category_id );  
     
 	// Get the ID of a given category
-    $category_id = get_cat_ID( 'plakat' );
+    $category_id = get_cat_ID( 'Plakat' );
     // Get the URL of this category
     $link_plakat = get_category_link( $category_id );  
     
     // Get the ID of a given category
-    $category_id = get_cat_ID( 'briefmarken' );
+    $category_id = get_cat_ID( 'Briefmarken' );
     // Get the URL of this category
     $link_briefmarken = get_category_link( $category_id );  
 
