@@ -1,51 +1,118 @@
 <?php
-/**
- * The template for displaying archive pages
- *
- * @link https://codex.wordpress.org/Template_Hierarchy
- *
- * @package Fernkopie_Custom
- */
+/*
+	Template Name: Archiv Page
+*/
+
+ 	// Collect the Category-links
+	
+    // Get the ID of a given category
+    $category_id = get_cat_ID( 'Visuelle Identitäten' );
+    // Get the URL of this category
+    $link_vis_ident = get_category_link( $category_id );
+    
+    // Get the ID of a given category
+    $category_id = get_cat_ID( 'Informationsmedien' );
+    // Get the URL of this category
+    $link_info_med = get_category_link( $category_id );  
+    
+    // Get the ID of a given category
+    $category_id = get_cat_ID( 'Schrift im Raum' );
+    // Get the URL of this category
+    $link_schrift_raum = get_category_link( $category_id );  
+    
+    // Get the ID of a given category
+    $category_id = get_cat_ID( 'Editorial' );
+    // Get the URL of this category
+    $link_editorial = get_category_link( $category_id );  
+    
+	// Get the ID of a given category
+    $category_id = get_cat_ID( 'Plakat' );
+    // Get the URL of this category
+    $link_plakat = get_category_link( $category_id );  
+    
+    // Get the ID of a given category
+    $category_id = get_cat_ID( 'Briefmarken' );
+    // Get the URL of this category
+    $link_briefmarken = get_category_link( $category_id );  
+
 
 get_header(); ?>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
 
-		<?php
-		if ( have_posts() ) : ?>
 
-			<header class="page-header">
-				<?php
-					the_archive_title( '<h1 class="page-title">', '</h1>' );
-					the_archive_description( '<div class="archive-description">', '</div>' );
-				?>
-			</header><!-- .page-header -->
+<!-- CONTENT
+===================================================== -->
+<div id="contentmain">
 
-			<?php
-			/* Start the Loop */
-			while ( have_posts() ) : the_post();
+	<!-- Archiv
+    ===================================================== -->
+	<div id="archiv-selection-section">
+		
+		<!-- Archive-header
+	    ===================================================== -->
+		<div id="archivesheader" class="container">
+			
+			<div class="row">
+				<div class="col-xs-8 col-lg-10 col-lg-offset-1">
+					<h1 class="vh1 l-bold">Fernkopie Archiv</h1>
+					<p class="vh2">Hier wird ein kurzer Text zum Archiv stehen. Wahrscheinlich zwei- oder dreizeilig. Hier wird ein kurzer Text zum Archiv stehen. Wahrscheinlich vier- oder fünfzeilig.</p>
+				</div><!-- /.col -->
+			</div><!-- /.row -->
+				
+		</div><!-- /#archivesheader .container -->
 
-				/*
-				 * Include the Post-Format-specific template for the content.
-				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', get_post_format() );
+		
 
-			endwhile;
+		
+		<div class="container archiv-selection">
+			
+			<div class="row">
+				<a class="is-hidden-lg" href="#"><img class="logo l-center-img" src="<?php bloginfo('stylesheet_directory'); ?>/assets/img/fernkopie-logo.jpg" alt="Fernkopie Logo" title="Fernkopie Logo"></a>
+			</div><!-- /.row -->
+			
+			<div class="row">
+				<div class="col-xs-4 archiv-selection-col">
+					<img class="logo l-center-img is-displayed-lg" src="<?php bloginfo('stylesheet_directory'); ?>/assets/img/fernkopie-logo.jpg" alt="Fernkopie Logo" title="Fernkopie Logo">
+					<a href="archiv-category.html">
+						<p class="l-center-text l-uppercase vh4">Archiv Editorial</p>
+						<div class="row">
+							<div class="col-lg-4 col-lg-offset-4">
+								<img class="l-center-img" src="<?php bloginfo('stylesheet_directory'); ?>/assets/img/beispielbilder/belin-1.jpg" alt="">
+							</div><!-- /.col -->
+						</div><!-- /.row -->
+					</a>
+				</div><!-- /.col -->
+					
+				<div class="col-xs-4 archiv-selection-col">
+					<img class="logo l-center-img is-displayed-lg" src="<?php bloginfo('stylesheet_directory'); ?>/assets/img/fernkopie-logo.jpg" alt="Fernkopie Logo" title="Fernkopie Logo">
+					<a href="archiv-category.html">
+						<p class="l-center-text l-uppercase vh4">Archiv Plakate</p>
+						<div class="row">
+							<div class="col-lg-4 col-lg-offset-4">
+								<img class="l-center-img" src="<?php bloginfo('stylesheet_directory'); ?>/assets/img/beispielbilder/belin-2.jpg" alt="">
+							</div><!-- /.col -->
+						</div><!-- /.row -->
+					</a>
+				</div><!-- /.col -->
+					
+				<div class="col-xs-4 archiv-selection-col">
+					<img class="logo l-center-img is-displayed-lg" src="<?php bloginfo('stylesheet_directory'); ?>/assets/img/fernkopie-logo.jpg" alt="Fernkopie Logo" title="Fernkopie Logo">
+					<a href="archiv-category.html">
+						<p class="l-center-text l-uppercase vh4">Archiv Briefmarken</p>
+						<div class="row">
+							<div class="col-lg-4 col-lg-offset-4">
+								<img class="l-center-img" src="<?php bloginfo('stylesheet_directory'); ?>/assets/img/beispielbilder/belin-3.jpg" alt="">
+							</div><!-- /.col -->
+						</div><!-- /.row -->
+					</a>
+				</div><!-- /.col -->
+			</div><!-- /.row -->	
+			
+		</div><!-- /.container .archiv-selection -->
+	
+	</div><!-- /#archiv-selection-section -->
+</div><!-- /#contentmain -->
 
-			the_posts_navigation();
-
-		else :
-
-			get_template_part( 'template-parts/content', 'none' );
-
-		endif; ?>
-
-		</main><!-- #main -->
-	</div><!-- #primary -->
-
+	
 <?php
-get_sidebar();
 get_footer();
