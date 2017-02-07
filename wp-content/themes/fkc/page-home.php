@@ -19,22 +19,6 @@
     $category_id = get_cat_ID( 'Schrift im Raum' );
     // Get the URL of this category
     $link_schrift_raum = get_category_link( $category_id );  
-    
-    // Get the ID of a given category
-    $category_id = get_cat_ID( 'Editorial' );
-    // Get the URL of this category
-    $link_editorial = get_category_link( $category_id );  
-    
-	// Get the ID of a given category
-    $category_id = get_cat_ID( 'Plakat' );
-    // Get the URL of this category
-    $link_plakat = get_category_link( $category_id );  
-    
-    // Get the ID of a given category
-    $category_id = get_cat_ID( 'Briefmarken' );
-    // Get the URL of this category
-    $link_briefmarken = get_category_link( $category_id );  
-
 
 get_header(); ?>
 

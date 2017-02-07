@@ -23,22 +23,6 @@
     // Get the URL of this category
     $link_schrift_raum = get_category_link( $category_id );  
     
-    // Get the ID of a given category
-    $category_id = get_cat_ID( 'Editorial' );
-    // Get the URL of this category
-    $link_editorial = get_category_link( $category_id );  
-    
-	// Get the ID of a given category
-    $category_id = get_cat_ID( 'Plakat' );
-    // Get the URL of this category
-    $link_plakat = get_category_link( $category_id );  
-    
-    // Get the ID of a given category
-    $category_id = get_cat_ID( 'Briefmarken' );
-    // Get the URL of this category
-    $link_briefmarken = get_category_link( $category_id );  
-
-
 get_header(); ?>
 
 
@@ -54,21 +38,7 @@ get_header(); ?>
 		<div class="row">
 			<div class="col-xs-8 col-lg-10 col-lg-offset-1">
 				<h1 class="vh1 l-bold"><?php echo get_cat_name($wp_query->queried_object_id); ?></h1>
-				
-				<!-- Visuelle Identitäten -->
-				<?php if($wp_query->queried_object_id == $cat_id_vis_ident) : ?>
-					<p class="vh2">VI: hier wird ein kurzer erklärender Text zu der jeweiligen Kategorie stehen</p>
-					
-				<!-- Informationsmedien -->	
-				 <?php elseif($wp_query->queried_object_id == $cat_id_info_med) :?>
-					<p class="vh2">IM: hier wird ein kurzer erklärender Text zu der jeweiligen Kategorie stehen</p>
-					
-				<!-- Schrift im Raum -->	
-				 <?php elseif($wp_query->queried_object_id == $cat_id_schrift_raum) :?>
-					<p class="vh2">SiR: hier wird ein kurzer erklärender Text zu der jeweiligen Kategorie stehen</p>
-					
-				<?php endif; ?>
-
+				<p class="vh2">VI: hier wird ein kurzer erklärender Text zu der jeweiligen Kategorie stehen</p>
 			</div><!-- /.col -->
 		</div><!-- /.row -->
 			
