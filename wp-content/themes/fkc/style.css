@@ -410,6 +410,42 @@ a:hover, a:active, a:focus, a:visited {
   visibility: visible;
   opacity: 1; }
 
+/* Gallery-Item Subclass "gallery-item-archiv" */
+.gallery-item.gallery-item-archiv a > img {
+  opacity: 1;
+  -webkit-transform: translateZ(0);
+  -webkit-transition: opacity 0.4s;
+  -moz-transition: opacity 0.4s;
+  -ms-transition: opacity 0.4s;
+  -o-transition: opacity 0.4s;
+  transition: opacity 0.4s; }
+
+.gallery-item.gallery-item-archiv a:hover > img {
+  opacity: 0.2; }
+
+.gallery-item.gallery-item-archiv a:hover figcaption {
+  background-color: transparent;
+  opacity: 1; }
+
+.gallery-item.gallery-item-archiv figcaption > h3,
+.gallery-item.gallery-item-archiv figcaption > p {
+  visibility: hidden;
+  opacity: 0;
+  margin-left: 0;
+  -webkit-transition: visibility 0.4s, opacity 0.4s;
+  -moz-transition: visibility 0.4s, opacity 0.4s;
+  -ms-transition: visibility 0.4s, opacity 0.4s;
+  -o-transition: visibility 0.4s, opacity 0.4s;
+  transition: visibility 0.4s, opacity 0.4s; }
+
+.gallery-item.gallery-item-archiv figcaption > h3 {
+  margin-top: 20px; }
+
+.gallery-item.gallery-item-archiv a:hover figcaption > h3,
+.gallery-item.gallery-item-archiv a:hover figcaption > p {
+  visibility: visible;
+  opacity: 1; }
+
 /* Navbar Module */
 .navbar-nav {
   float: right; }
