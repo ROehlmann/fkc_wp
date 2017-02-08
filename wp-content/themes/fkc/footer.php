@@ -11,6 +11,7 @@
 
 ?>
 
+<div id="minheight"></div>
 <!-- FOOTER
 ===================================================== -->
 <footer id="footermain" class="l-highlighted">
@@ -27,6 +28,8 @@
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script>window.jQuery || document.write('<script src="<?php bloginfo('stylesheet_directory'); ?>/assets/js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
 
+<script src="<?php bloginfo('stylesheet_directory'); ?>/assets/vendor/slick/slick.min.js"></script>
+
 <script src="<?php bloginfo('stylesheet_directory'); ?>/assets/js/main.js"></script>
 
 <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
@@ -42,5 +45,6 @@
 	
 <?php wp_footer(); ?>
 
+</div><!-- /#page-wrap -->
 </body>
 </html>

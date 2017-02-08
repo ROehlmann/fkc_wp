@@ -49,6 +49,10 @@
 
 <!-- Stylesheets -->
 <link rel="stylesheet" href="<?php bloginfo('stylesheet_directory'); ?>/assets/css/bootstrap-grid.min.css">
+<!-- slick slider basic styles -->
+<link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_directory'); ?>/assets/vendor/slick/slick.css"/>
+<!-- slick slider theme styles -->
+<link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_directory'); ?>/assets/vendor/slick/slick-theme.css"/>
 
 <!-- Javascript -->
 <script src="<?php bloginfo('stylesheet_directory'); ?>/assets/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
@@ -58,7 +62,8 @@
 
 <body <?php body_class(); ?>>
 
-
+<!-- Necessary for sticky footer -->
+<div id="page-wrap">
 
 <!-- HEADER
 ===================================================== -->
@@ -75,6 +80,7 @@
 			<a class="l-pull-left" href="<?php echo get_home_url(); ?>">
 				<img class="logo" src="<?php bloginfo('stylesheet_directory'); ?>/assets/img/fernkopie-logo.jpg" alt="Fernkopie Logo" title="Fernkopie Logo">
 			</a>
+			
 			
 			<!-- NAVBAR BURGER-BUTTON -->
 			<a role="button" class="l-pull-right is-hidden-md navbar-nav-open" href="#0">

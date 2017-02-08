@@ -27,7 +27,10 @@ jQuery(document).ready(function(){
 		$dropdownParent.on("click", dropdown);
     }
 	
-	
+	/* Initialize Slick Slider */
+	$('.slider').slick({
+		dots: true
+	});
 	
 	
 	/* When resizing */

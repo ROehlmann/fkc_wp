@@ -82,6 +82,9 @@ textarea {
 /* ==========================================================================
    Base styles
    ========================================================================== */
+html, body {
+  height: 100%; }
+
 body {
   background-color: #FFFFFF;
   font-family: "BrownPro-Light"; }
@@ -238,6 +241,21 @@ a:hover, a:active, a:focus, a:visited {
 /* ==========================================================================
    Layout styles
    ========================================================================== */
+#page-wrap {
+  min-height: 100%;
+  margin-bottom: -142px; }
+
+#page-wrap::after {
+  content: "";
+  display: block; }
+
+#footermain,
+#page-wrap::after {
+  height: 100px; }
+
+#footermain {
+  margin-top: 70px; }
+
 /* DUPLICATION! #projectsheader und #content-section-header mergen! */
 #projectsheader {
   margin-bottom: 15px; }
@@ -269,10 +287,6 @@ a:hover, a:active, a:focus, a:visited {
 @media screen and (min-width: 1200px) {
   #carousel-section {
     margin-bottom: 80px; } }
-#footermain {
-  margin-top: 70px;
-  height: 100px; }
-
 /* Box */
 .l-pull-left {
   float: left; }
@@ -411,36 +425,37 @@ a:hover, a:active, a:focus, a:visited {
   opacity: 1; }
 
 /* Gallery-Item Subclass "gallery-item-archiv" */
-.gallery-item.gallery-item-archiv figcaption {
-  position: absolute;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+.gallery-item.gallery-item-archiv a > img {
+  opacity: 1;
+  -webkit-transform: translateZ(0);
+  -webkit-transition: opacity 0.4s;
+  -moz-transition: opacity 0.4s;
+  -ms-transition: opacity 0.4s;
+  -o-transition: opacity 0.4s;
+  transition: opacity 0.4s; }
+
+.gallery-item.gallery-item-archiv a:hover > img {
+  opacity: 0.2; }
+
+.gallery-item.gallery-item-archiv a:hover figcaption {
   background-color: transparent;
-  -webkit-transition: background-color 0.4s;
-  -moz-transition: background-color 0.4s;
-  -ms-transition: background-color 0.4s;
-  -o-transition: background-color 0.4s;
-  transition: background-color 0.4s; }
+  opacity: 1; }
 
 .gallery-item.gallery-item-archiv figcaption > h3,
 .gallery-item.gallery-item-archiv figcaption > p {
-  margin-left: 20px; }
-
-.gallery-item.gallery-item-archiv figcaption > h3 {
-  margin-top: 20px; }
-
-.gallery-item.gallery-item-archiv figcaption > p {
   visibility: hidden;
   opacity: 0;
+  margin-left: 0;
   -webkit-transition: visibility 0.4s, opacity 0.4s;
   -moz-transition: visibility 0.4s, opacity 0.4s;
   -ms-transition: visibility 0.4s, opacity 0.4s;
   -o-transition: visibility 0.4s, opacity 0.4s;
   transition: visibility 0.4s, opacity 0.4s; }
 
+.gallery-item.gallery-item-archiv figcaption > h3 {
+  margin-top: 20px; }
+
+.gallery-item.gallery-item-archiv a:hover figcaption > h3,
 .gallery-item.gallery-item-archiv a:hover figcaption > p {
   visibility: visible;
   opacity: 1; }

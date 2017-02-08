@@ -28,31 +28,36 @@ $programmer_email 	= get_field('programmer_email');
 	
 	<!-- Carousel-Section
     ===================================================== -->
-	<?php
-	// check if the repeater field has rows of data
-	if( have_rows('slider') ): ?>
-		
-		<div id="carousel-section" class="container">
-			<div class="row">
-		
-				<?php // loop through the rows of data
-				while ( have_rows('slider') ) : the_row(); 
-					$slider_pic = get_sub_field('slider_pic'); ?>
-					
-					<?php if ( !empty($slider_pic) ) : ?>
-						<div class="col-xs-12">
-							<a href="#0">
-								<img src="<?php echo $slider_pic['url']; ?>" alt="<?php echo $slider_pic['alt']; ?>">
-							</a>
-						</div><!-- /.col -->
-					<?php endif; ?>
-	
-				<?php endwhile; ?>
-			
-			</div><!-- /.row -->
-		</div><!-- /#carousel-section .container -->	
 
-	<?php endif; ?>
+		
+	<div id="carousel-section" class="container">
+		<?php
+		// check if the repeater field has rows of data
+		if( have_rows('slider') ): ?>
+			<div class="row">
+				<div class="col-xs-12">
+					<div class="slider">
+						
+						<?php // loop through the rows of data
+						while ( have_rows('slider') ) : the_row(); 
+							$slider_pic = get_sub_field('slider_pic'); ?>
+							
+							<?php if ( !empty($slider_pic) ) : ?>
+								<div class="slider-item">
+									<a href="#0">
+										<img src="<?php echo $slider_pic['url']; ?>" alt="<?php echo $slider_pic['alt']; ?>">
+									</a>
+								</div><!-- /.slider-item -->
+							<?php endif; ?>
+			
+						<?php endwhile; ?>
+					</div><!-- /.slider -->
+				</div><!-- /.col -->
+			</div><!-- /.row -->
+		<?php endif; ?>
+	</div><!-- /#carousel-section .container -->	
+
+	
 	
 	
 
@@ -60,53 +65,53 @@ $programmer_email 	= get_field('programmer_email');
 	<div class="container">
 		<div class="row">
 		
-		<!-- Text
-	    ===================================================== -->
-		<?php if ( !empty($text) ) : ?>	
-			<div class="col-lg-6 l-pull-right">
-				<p class="vh5"><?php echo $text; ?></p>
-			</div><!-- /.col -->
-		<?php endif; ?>
-
-
-		<!-- Team
-	    ===================================================== -->
-		<?php
-		// check if the repeater field has rows of data
-		if( have_rows('team') ): ?>
-			<div class="col-xs-12 col-lg-6">
-				
-				<ul class="l-list-no-bullets">	
-					<?php 
-					// loop through the rows of data
-					while ( have_rows('team') ) : the_row(); 
-						$name = get_sub_field('name');
-						$position = get_sub_field('position');
-						$area = get_sub_field('area'); ?>
-						
-						<li>
-						<?php if ( !empty($name) ) : ?>
-							<p class="vh6">
-								<span class="l-bold"><?php echo $name; ?></span><br>
-								<?php if ( !empty($postion) ) : ?>
-									<?php echo $position; ?><br>
-								<?php endif; ?>
-								<?php if ( !empty($area) ) : ?>
-									<?php echo $area; ?><br>
-								<?php endif; ?>
-							</p>	
-						<?php endif; ?>
-						</li>
-					<?php endwhile; ?>
-				</ul>
-				
-			</div><!-- /.col -->
-		<?php endif; ?>
+			<!-- Text
+		    ===================================================== -->
+			<?php if ( !empty($text) ) : ?>	
+				<div class="col-lg-6 l-pull-right">
+					<p class="vh5"><?php echo $text; ?></p>
+				</div><!-- /.col -->
+			<?php endif; ?>
+	
+	
+			<!-- Team
+		    ===================================================== -->
+			<?php
+			// check if the repeater field has rows of data
+			if( have_rows('team') ): ?>
+				<div class="col-xs-12 col-lg-6">
+					
+					<ul class="l-list-no-bullets">	
+						<?php 
+						// loop through the rows of data
+						while ( have_rows('team') ) : the_row(); 
+							$name = get_sub_field('name');
+							$position = get_sub_field('position');
+							$area = get_sub_field('area'); ?>
+							
+							<li>
+							<?php if ( !empty($name) ) : ?>
+								<p class="vh6">
+									<span class="l-bold"><?php echo $name; ?></span><br>
+									<?php if ( !empty($postion) ) : ?>
+										<?php echo $position; ?><br>
+									<?php endif; ?>
+									<?php if ( !empty($area) ) : ?>
+										<?php echo $area; ?><br>
+									<?php endif; ?>
+								</p>	
+							<?php endif; ?>
+							</li>
+						<?php endwhile; ?>
+					</ul>
+					
+				</div><!-- /.col -->
+			<?php endif; ?>
 		
 							
 			
-		<!-- Kontaktinformationen
-	    ===================================================== -->
+			<!-- Kontaktinformationen
+		    ===================================================== -->
 			<div class="col-xs-12 col-lg-6 l-pull-right">
 				
 				<hr class="is-hidden-lg">
@@ -119,7 +124,7 @@ $programmer_email 	= get_field('programmer_email');
 				
 			</div><!-- /.col -->
 		
-		</div><!-- /.row -->
+
 	</div><!-- /.container -->
 	
 </div><!-- /#contentmain -->
