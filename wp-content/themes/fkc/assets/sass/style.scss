@@ -729,6 +729,26 @@ margin: 0 auto -100px; // must be equal to footer height for sticky footer to wo
 	display: none;
 }
 
+/* Slider Module */
+.slider-button-prev,
+.slider-button-next {
+	position: absolute;
+    cursor: pointer;
+    background: transparent;
+    top: 50%;
+    -webkit-transform: translate(0, -50%);
+    -ms-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+    padding: 0;
+    border: none;
+}
+.slider-button-prev {
+	left: -40px;
+}
+.slider-button-next {
+	right: -40px;
+}
+
 
 /* Projects-all Module */
 /* Weiter generalisieren und wiederverwende, wenn andere Sections ähnlich aufgebaut sind */

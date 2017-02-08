@@ -51,31 +51,33 @@ $project_id 				= get_the_ID();
 	
 	<!-- Carousel-Section
     ===================================================== -->
-	<?php
-	// check if the repeater field has rows of data
-	if( have_rows('slider') ): ?>
-		
-		<div id="carousel-section" class="container">
+	<div id="carousel-section" class="container">
+		<?php
+		// check if the repeater field has rows of data
+		if( have_rows('slider') ): ?>
 			<div class="row">
-		
-				<?php // loop through the rows of data
-				while ( have_rows('slider') ) : the_row(); 
-					$slider_pic = get_sub_field('slider_pic'); ?>
-					
-					<?php if ( !empty($slider_pic) ) : ?>
-						<div class="col-xs-12">
-							<a href="#0">
-								<img src="<?php echo $slider_pic['url']; ?>" alt="<?php echo $slider_pic['alt']; ?>">
-							</a>
-						</div><!-- /.col -->
-					<?php endif; ?>
-	
-				<?php endwhile; ?>
+				<div class="col-xs-12">
+					<div class="slider">
+						
+						<?php // loop through the rows of data
+						while ( have_rows('slider') ) : the_row(); 
+							$slider_pic = get_sub_field('slider_pic'); ?>
+							
+							<?php if ( !empty($slider_pic) ) : ?>
+								<div class="slider-item">
+									<a href="#0">
+										<img src="<?php echo $slider_pic['url']; ?>" alt="<?php echo $slider_pic['alt']; ?>">
+									</a>
+								</div><!-- /.slider-item -->
+							<?php endif; ?>
 			
+						<?php endwhile; ?>
+					</div><!-- /.slider -->
+				</div><!-- /.col -->
 			</div><!-- /.row -->
-		</div><!-- /#carousel-section .container -->	
+		<?php endif; ?>
 
-	<?php endif; ?>
+	</div><!-- /#carousel-section .container -->	
 			
 			
 			

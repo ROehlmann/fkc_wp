@@ -29,7 +29,9 @@ jQuery(document).ready(function(){
 	
 	/* Initialize Slick Slider */
 	$('.slider').slick({
-		dots: true
+		dots: true,
+		prevArrow: "<img class='slider-button-prev' src='/wp-content/themes/fkc/assets/img/slider-button-prev.svg'>",
+		nextArrow: "<img class='slider-button-next' src='/wp-content/themes/fkc/assets/img/slider-button-next.svg'>"
 	});
 	
 	
