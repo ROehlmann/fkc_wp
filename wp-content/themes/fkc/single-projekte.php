@@ -85,9 +85,7 @@ $project_id 				= get_the_ID();
 	<div class="container">
 		<div class="row">
 			<div class="grid">
-				
-				<!-- Möglicherweise alles in eine Row packen um das Layout zu erhalten -->
-				
+								
 				<!-- Empty div required by the Masonry plugin -->
 				<div class="grid-sizer"></div>
 				

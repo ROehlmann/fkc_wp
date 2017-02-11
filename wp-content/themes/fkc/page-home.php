@@ -63,31 +63,35 @@ get_header(); ?>
 		
 	</div><!-- /.container -->
 	
+
+
+    <?php 
+	//Define the loop based on arguments
+	$query_featured_projects_home = new WP_Query( array('post_type' => 'projekte'));
+
+    //Display the contents
+    if ( $query_featured_projects_home->have_posts() ) : ?>
     
-	<?php 
-		//Define the loop based on arguments
-		$query_featured_projects_home = new WP_Query( array('post_type' => 'projekte'));
- 
-	    //Display the contents
-	    if ( $query_featured_projects_home->have_posts() ) : ?>
-	    
-		    <div id="projects-section" class="container">
-				<!-- Projektauswahlmatrix -->
-				<div class="row">
-		    
-				    <?php while ( $query_featured_projects_home->have_posts() ) : $query_featured_projects_home->the_post();
-				    	// Könnte ich auch direkt in den Loop mit einbauen mit einer meta_query 
-				    	$show_on_main_page				= get_field('show_on_main_page');
+    <div id="projects-section" class="container">
+	    <div class="row">
+		    <div class="grid grid--small-border">
+			    <!-- Empty div required by the Masonry plugin -->
+			    <div class="grid-sizer"></div>
+			    
+			    <?php while ( $query_featured_projects_home->have_posts() ) : $query_featured_projects_home->the_post();
+			    	// Könnte ich auch direkt in den Loop mit einbauen mit einer meta_query 
+			    	$show_on_main_page				= get_field('show_on_main_page');
+			    	
+			    	if ( $show_on_main_page != true ) { continue; }
+			    	
+			    	$customer						= get_field('customer');
+			    	$project_title 					= get_field('project_title');
+			    	$feature_image					= get_field('feature_image'); 
+			    ?>
+
+			    	<div class="grid-item grid-item--small-border">
 				    	
-				    	if ( $show_on_main_page != true ) { continue; }
-				    	
-				    	$customer						= get_field('customer');
-				    	$project_title 					= get_field('project_title');
-				    	$feature_image					= get_field('feature_image'); 
-				    ?>
-			
-					<div class="col-xs-12 col-lg-6">
-						<figure class="gallery-item">
+				    	<figure class="gallery-item">
 							<a href="<?php echo get_permalink();?>" >
 								<img src="<?php echo $feature_image['url']; ?>" alt="<?php echo $feature_image['alt']; ?>" >
 								<figcaption>
@@ -96,22 +100,26 @@ get_header(); ?>
 								</figcaption>
 							</a>
 						</figure>
-					</div><!-- /.col -->
-			
-					<?php endwhile; ?>
-					
-				</div><!-- /.row -->
-		    
-				<!-- Link zu weiteren Projekten -->
-				<div class="row">
-					<div class="col-xs-12 col-lg-6">
-						<p class="vh6"><a href="<?php echo get_post_type_archive_link( 'projekte' ); ?>">mehr Projekte →</a></p>
-					</div><!-- /.col -->
-				</div><!-- /.row --> 
-				
-			</div><!-- /.container -->
-	    <?php endif; ?>
-		<?php wp_reset_postdata(); ?>		
+
+			    	</div><!-- /.grid-item -->
+			    	
+			    <?php endwhile; ?>
+			    
+		    </div><!-- /.grid -->
+	    </div><!-- /.row -->
+	    
+	    <!-- Link zu weiteren Projekten -->
+		<div class="row">
+			<div class="col-xs-12 col-lg-6">
+				<p class="vh6"><a href="<?php echo get_post_type_archive_link( 'projekte' ); ?>">mehr Projekte →</a></p>
+			</div><!-- /.col -->
+		</div><!-- /.row --> 
+
+    </div><!-- /#projects-section .container -->
+    
+	<?php endif; ?>
+    <?php wp_reset_postdata(); ?>
+  			
 
 
 

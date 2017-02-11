@@ -630,6 +630,9 @@ a:hover, a:active, a:focus, a:visited {
 .grid {
   margin: 0 0px; }
 
+.grid.grid--small-border {
+  margin: 0 14px; }
+
 .grid-sizer,
 .grid-item {
   width: 50%; }
@@ -637,6 +640,9 @@ a:hover, a:active, a:focus, a:visited {
 .grid-item {
   border: 15px solid white;
   box-sizing: border-box; }
+
+.grid-item.grid-item--small-border {
+  border: 1px solid white; }
 
 .grid-item > img {
   width: auto;
