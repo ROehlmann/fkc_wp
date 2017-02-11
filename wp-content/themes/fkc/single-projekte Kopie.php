@@ -83,30 +83,87 @@ $project_id 				= get_the_ID();
 			
 	<!-- Text und Bilder im Wechsel (3 Arten, so wie ich das sehe)
     ===================================================== -->
-
-	<div class="container">
-		<div class="row">
-			<div class="grid">
-				
-				<!-- Möglicherweise alles in eine Row packen um das Layout zu erhalten -->
-				
-				<!-- Empty div required by the Masonry plugin -->
-				<div class="grid-sizer"></div>
-				
-<img class="grid-item" src="<?php get_stylesheet_directory(); ?>/wp-content/themes/fkc/assets/img/beispielbilder/burdeny-4.jpg">
-					
-				<div id="blue" class="grid-item"></div>
-				<div id="purple" class="grid-item"></div>
-				<div id="green" class="grid-item"></div>
-				<div id="yellow" class="grid-item"></div>
-				<div id="brown" class="grid-item"></div>
-				<div id="pink" class="grid-item"></div>
+	<div id="project-details-section" class="container">
 		
+		<div class="project-details">
+			<div class="row">
 				
-			</div><!-- /.grid-->
-		</div><!-- /.row -->
-	</div><!-- /.container -->
+				<div class="col-xs-12 col-lg-6">
+					<div class="project-details-whitespace"></div>
+				</div><!-- /.col -->
+				
+				<!-- Projektbeschreibung (lang) -->
+				<?php if ( !empty($description_main) ) : ?>
+					<div class="col-xs-12 col-lg-6 l-pull-right">
+						<div class="project-details-main-info">
+							<!-- <div class="row"> -->
+								<!-- <div class="col-lg-10 col-lg-offset-2"> -->
+									<p class="vh5"><?php echo $description_main; ?></p>
+								<!-- </div><!-- /.div --> 
+							<!-- </div><!-- /.row -->
+							
+							<!-- Aufzählung Fakten -->
+							<?php if ( !empty($facts_main) ) : ?>
+								<p class="vh6"><?php echo $facts_main; ?></p>
+							<?php endif; ?>
+						</div><!-- /.project-details-main-info -->
+					</div><!-- /.col -->
+				<?php endif; ?>
 
+			
+				<!-- Weitere Inhalte -->
+				<?php
+				// check if the repeater field has rows of data
+				if( have_rows('additional_content') ): ?>
+					<div class="project-details-side-info">
+					
+						<?php // loop through the rows of data
+						while ( have_rows('additional_content') ) : the_row(); 
+							$which_column 		= get_sub_field('which_column');
+							$column_class 		= "l-pull-left l-clear-left";
+							if( $which_column == 'right' )
+								{ $column_class = "l-pull-right l-clear-right";} 
+								
+							$kind_of_content 	= get_sub_field('kind_of_content'); ?>
+							
+							<!-- if image -->
+							<?php if ( $kind_of_content == 'pic' ) : 
+								$additional_image = get_sub_field('additional_image'); ?>
+								
+								<?php if ( !empty($additional_image) ) : ?>
+									<div class="col-xs-6 project-details-side-info-pic <?php echo $column_class; ?>">
+										<img src="<?php echo $additional_image['url']; ?>" alt="<?php echo $additional_image['alt']; ?>" >
+									</div><!-- /.col .project-details-side-info-pic -->
+								<?php endif; ?>
+
+							<!-- if text -->	
+							<?php elseif ( $kind_of_content == 'text' ) : 
+								$additional_text = get_sub_field('additional_text'); 
+								$text_offset = get_sub_field('text_offset'); ?>
+								
+								
+								
+								<?php if ( !empty($additional_text) ) : ?>
+									<?php if ( $which_column == 'left' && $text_offset == true ): ?>
+										<div class="col-xs-5 col-xs-offset-1 project-details-side-info-pic <?php echo $column_class; ?>">
+									<?php else : ?>
+										<div class="col-xs-6 project-details-side-info-pic <?php echo $column_class; ?>">
+									<?php endif; ?>
+											<p><?php echo $additional_text; ?>
+										</div><!-- /.col .project-details-side-info-pic -->
+								<?php endif; ?>
+							
+							<?php endif; ?>
+			
+						<?php endwhile; ?>
+					</div><!-- /.project-details-side-info -->
+				<?php endif; ?>
+
+				
+			</div><!-- /.row -->
+		</div><!-- /.project-details -->
+		
+	</div><!-- /#project-info-section .container -->
 			
 
 

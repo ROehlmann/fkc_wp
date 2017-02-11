@@ -27,6 +27,15 @@ jQuery(document).ready(function(){
 		$dropdownParent.on("click", dropdown);
     }
 	
+	/* Initialize Masonry Layout */
+	$('.grid').masonry({
+		// options
+		columnWidth: '.grid-sizer',
+		itemSelector: '.grid-item',
+		percentPosition: true,
+		originLeft: false
+	});
+	
 	/* Initialize Slick Slider for class "Slider"*/
 	$('.slider').slick({
 		dots: true,

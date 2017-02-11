@@ -28,8 +28,12 @@
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script>window.jQuery || document.write('<script src="<?php bloginfo('stylesheet_directory'); ?>/assets/js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
 
+
+<!-- Script for Masonry Layout -->
+<script src="<?php bloginfo('stylesheet_directory'); ?>/assets/vendor/masonry/masonry.pkgd.min.js"></script>
+<!-- Script for Slick Slider -->
 <script src="<?php bloginfo('stylesheet_directory'); ?>/assets/vendor/slick/slick.min.js"></script>
-<!-- Script for featherlight -->
+<!-- Script for Featherlight Lightbox-->
 <script src="<?php bloginfo('stylesheet_directory'); ?>/assets/vendor/featherlight/featherlight.min.js"></script>
 
 
