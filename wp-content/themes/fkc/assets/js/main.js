@@ -27,13 +27,15 @@ jQuery(document).ready(function(){
 		$dropdownParent.on("click", dropdown);
     }
 	
-	/* Initialize Slick Slider */
+	/* Initialize Slick Slider for class "Slider"*/
 	$('.slider').slick({
 		dots: true,
 		prevArrow: "<img class='slider-button-prev' src='/wp-content/themes/fkc/assets/img/slider-button-prev.svg'>",
 		nextArrow: "<img class='slider-button-next' src='/wp-content/themes/fkc/assets/img/slider-button-next.svg'>"
 	});
+
 	
+		
 	
 	/* When resizing */
 	/* Show navigation menu (and other changes) when screen size >= 992px */

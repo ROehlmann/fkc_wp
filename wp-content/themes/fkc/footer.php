@@ -29,6 +29,10 @@
 <script>window.jQuery || document.write('<script src="<?php bloginfo('stylesheet_directory'); ?>/assets/js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
 
 <script src="<?php bloginfo('stylesheet_directory'); ?>/assets/vendor/slick/slick.min.js"></script>
+<!-- Script for featherlight -->
+<script src="<?php bloginfo('stylesheet_directory'); ?>/assets/vendor/featherlight/featherlight.min.js"></script>
+
+
 
 <script src="<?php bloginfo('stylesheet_directory'); ?>/assets/js/main.js"></script>
 

@@ -112,7 +112,7 @@ $programmer_email 	= get_field('programmer_email');
 			
 			<!-- Kontaktinformationen
 		    ===================================================== -->
-			<div class="col-xs-12 col-lg-6 l-pull-right">
+			<div class="col-xs-12 col-lg-6 l-pull-right l-clear-right">
 				
 				<hr class="is-hidden-lg">
 		

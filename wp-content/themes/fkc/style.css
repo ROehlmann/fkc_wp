@@ -295,8 +295,14 @@ a:hover, a:active, a:focus, a:visited {
 .l-pull-left {
   float: left; }
 
+.l-clear-left {
+  clear: left; }
+
 .l-pull-right {
   float: right; }
+
+.l-clear-right {
+  clear: right; }
 
 .l-center-img {
   display: block;
@@ -541,6 +547,10 @@ a:hover, a:active, a:focus, a:visited {
 
 .slider-button-next {
   right: -40px; }
+
+/* Lightbox Module */
+.lightboxOverlay {
+  background-color: white; }
 
 /* Projects-all Module */
 /* Weiter generalisieren und wiederverwende, wenn andere Sections ähnlich aufgebaut sind */

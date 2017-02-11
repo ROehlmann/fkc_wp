@@ -111,32 +111,55 @@ $project_id 				= get_the_ID();
 				<?php endif; ?>
 
 			
-			<!-- Weitere Inhalte -->
-				<div class="project-details-side-info">
-					<div class="col-xs-6 project-details-side-info-pic">
-						<a href="#0">
-							<img src="img/beispielbilder/light-1-1.jpg">
-						</a>
-					</div><!-- /.col -->
+				<!-- Weitere Inhalte -->
+				<?php
+				// check if the repeater field has rows of data
+				if( have_rows('additional_content') ): ?>
+					<div class="project-details-side-info">
 					
-					<div class="col-xs-6 project-details-side-info-pic">
-						<a href="#0">
-							<img src="img/beispielbilder/light-2-1.jpg">
-						</a>
-					</div><!-- /.col -->
-					
-					<div class="col-xs-6 project-details-side-info-pic">
-						<a href="#0">
-							<img src="img/beispielbilder/light-3-1.jpg">
-						</a>
-					</div><!-- /.col -->
-					
-					<div class="col-xs-6 project-details-side-info-pic">
-						<a href="#0">
-							<img src="img/beispielbilder/light-4.jpg">
-						</a>
-					</div><!-- /.col -->
-				</div><!-- /.project-details-side-info -->
+						<?php // loop through the rows of data
+						while ( have_rows('additional_content') ) : the_row(); 
+							$which_column 		= get_sub_field('which_column');
+							$column_class 		= "l-pull-left l-clear-left";
+							if( $which_column == 'right' )
+								{ $column_class = "l-pull-right l-clear-right";} 
+								
+							$kind_of_content 	= get_sub_field('kind_of_content'); ?>
+							
+							<!-- if image -->
+							<?php if ( $kind_of_content == 'pic' ) : 
+								$additional_image = get_sub_field('additional_image'); ?>
+								
+								<?php if ( !empty($additional_image) ) : ?>
+									<div class="col-xs-6 project-details-side-info-pic <?php echo $column_class; ?>">
+										<img src="<?php echo $additional_image['url']; ?>" alt="<?php echo $additional_image['alt']; ?>" >
+									</div><!-- /.col .project-details-side-info-pic -->
+								<?php endif; ?>
+
+							<!-- if text -->	
+							<?php elseif ( $kind_of_content == 'text' ) : 
+								$additional_text = get_sub_field('additional_text'); 
+								$text_offset = get_sub_field('text_offset'); ?>
+								
+								
+								
+								<?php if ( !empty($additional_text) ) : ?>
+									<?php if ( $which_column == 'left' && $text_offset == true ): ?>
+										<div class="col-xs-5 col-xs-offset-1 project-details-side-info-pic <?php echo $column_class; ?>">
+									<?php else : ?>
+										<div class="col-xs-6 project-details-side-info-pic <?php echo $column_class; ?>">
+									<?php endif; ?>
+											<p><?php echo $additional_text; ?>
+										</div><!-- /.col .project-details-side-info-pic -->
+								<?php endif; ?>
+							
+							<?php endif; ?>
+			
+						<?php endwhile; ?>
+					</div><!-- /.project-details-side-info -->
+				<?php endif; ?>
+
+				
 			</div><!-- /.row -->
 		</div><!-- /.project-details -->
 		

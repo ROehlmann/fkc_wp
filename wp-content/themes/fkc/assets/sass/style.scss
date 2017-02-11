@@ -398,9 +398,15 @@ margin: 0 auto -100px; // must be equal to footer height for sticky footer to wo
 .l-pull-left {
 	float: left;
 }
+.l-clear-left {
+	clear: left;
+}
 
 .l-pull-right {
 	float: right;
+}
+.l-clear-right {
+	clear: right;
 }
 
 .l-center-img {
@@ -748,6 +754,12 @@ margin: 0 auto -100px; // must be equal to footer height for sticky footer to wo
 .slider-button-next {
 	right: -40px;
 }
+
+/* Lightbox Module */
+.lightboxOverlay {
+	background-color: white;	
+}
+
 
 
 /* Projects-all Module */
