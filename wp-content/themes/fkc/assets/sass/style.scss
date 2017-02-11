@@ -869,7 +869,7 @@ margin: 0 auto -100px; // must be equal to footer height for sticky footer to wo
 
 /* Masonry Styles Module */
 .grid {
-	margin: 0 7px; // Should be 15px - number of px defined for the border of grid-item
+	margin: 0 0px; // Should be 15px - number of px defined for the border of grid-item
 }
 
 .grid-sizer,
@@ -878,12 +878,16 @@ margin: 0 auto -100px; // must be equal to footer height for sticky footer to wo
 }
 
 .grid-item {
-	border: 8px solid white;
+	border: 15px solid white;
 	box-sizing: border-box;
 }
+
 .grid-item > img {
 	width: auto;
 	height: auto;
+}
+.grid-item.grid-item--size2 {
+	width: 100%;
 }
 
 #red {

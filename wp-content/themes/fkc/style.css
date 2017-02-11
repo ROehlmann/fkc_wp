@@ -628,19 +628,22 @@ a:hover, a:active, a:focus, a:visited {
     margin-bottom: 50px; } }
 /* Masonry Styles Module */
 .grid {
-  margin: 0 7px; }
+  margin: 0 0px; }
 
 .grid-sizer,
 .grid-item {
   width: 50%; }
 
 .grid-item {
-  border: 8px solid white;
+  border: 15px solid white;
   box-sizing: border-box; }
 
 .grid-item > img {
   width: auto;
   height: auto; }
+
+.grid-item.grid-item--size2 {
+  width: 100%; }
 
 #red {
   background-color: red;

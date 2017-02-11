@@ -81,8 +81,6 @@ $project_id 				= get_the_ID();
 			
 			
 			
-	<!-- Text und Bilder im Wechsel (3 Arten, so wie ich das sehe)
-    ===================================================== -->
 
 	<div class="container">
 		<div class="row">
@@ -93,9 +91,37 @@ $project_id 				= get_the_ID();
 				<!-- Empty div required by the Masonry plugin -->
 				<div class="grid-sizer"></div>
 				
-<img class="grid-item" src="<?php get_stylesheet_directory(); ?>/wp-content/themes/fkc/assets/img/beispielbilder/burdeny-4.jpg">
-					
+				<div class="grid-item">
+					<p class="vh5"><?php echo $description_main; ?></p>
+					<p class="vh6"><?php echo $facts_main; ?></p>
+				</div><!-- /.grid-item -->
+				
+				<div class="grid-item project-details-whitespace"></div>
+				
 				<div id="blue" class="grid-item"></div>
+				
+				<?php if( have_rows('additional_content') ): ?>
+					<?php while ( have_rows('additional_content') ) : the_row();
+						$kind_of_content = get_sub_field('kind_of_content'); ?>
+							<?php if ( $kind_of_content == 'text') :
+								$additional_text = get_sub_field('additional_text'); ?>
+								<div class="grid-item">
+									<p class="vh5"><?php echo $additional_text; ?></p>
+								</div><!-- /.grid-item -->
+							<?php elseif ( $kind_of_content == 'pic' ) :
+								$additional_image = get_sub_field('additional_image'); ?>
+								<div class="grid-item">
+									<img src="<?php echo $additional_image['url']; ?>" alt="<?php echo $additional_image['alt']; ?>">
+								</div><!-- /.grid-item -->
+							<?php endif; ?>		
+						
+					<?php endwhile; ?>
+				
+				<?php endif; ?>
+
+<div class="grid-item"><img src="<?php get_stylesheet_directory(); ?>/wp-content/themes/fkc/assets/img/beispielbilder/burdeny-4.jpg"></div>
+					
+				
 				<div id="purple" class="grid-item"></div>
 				<div id="green" class="grid-item"></div>
 				<div id="yellow" class="grid-item"></div>

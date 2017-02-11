@@ -29,6 +29,9 @@
 <script>window.jQuery || document.write('<script src="<?php bloginfo('stylesheet_directory'); ?>/assets/js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
 
 
+
+<!-- Script for Imagesloaded -->
+<script src="<?php bloginfo('stylesheet_directory'); ?>/assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
 <!-- Script for Masonry Layout -->
 <script src="<?php bloginfo('stylesheet_directory'); ?>/assets/vendor/masonry/masonry.pkgd.min.js"></script>
 <!-- Script for Slick Slider -->

@@ -35,6 +35,11 @@ jQuery(document).ready(function(){
 		percentPosition: true,
 		originLeft: false
 	});
+	/* layout Masonry after each image loads */
+		$('.grid').imagesLoaded().progress( function() {
+		$('.grid').masonry('layout');
+	});
+	
 	
 	/* Initialize Slick Slider for class "Slider"*/
 	$('.slider').slick({
