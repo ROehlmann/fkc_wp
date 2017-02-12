@@ -470,6 +470,17 @@ a:hover, a:active, a:focus, a:visited {
   visibility: visible;
   opacity: 1; }
 
+/* Nav-Categories (the small navigation element showing only the categories in large-screen mode */
+.navbar-left {
+  display: inline; }
+
+.nav-categories {
+  display: inline; }
+
+.nav-categories > p {
+  display: inline-block;
+  margin-left: 20px; }
+
 /* Navbar Module */
 .navbar-nav {
   float: right; }
@@ -527,7 +538,12 @@ a:hover, a:active, a:focus, a:visited {
 
 /* Dropdown Module */
 .dropdown {
-  display: none; }
+  display: none;
+  list-style: none;
+  padding-left: 30px; }
+
+.dropdown > li:first-child {
+  margin-top: 25px; }
 
 /* Slider Module */
 .slider-button-prev,

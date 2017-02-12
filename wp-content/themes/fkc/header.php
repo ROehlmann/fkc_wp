@@ -80,9 +80,19 @@
 		<div class="navbar navbar-header">
 			
 			<!-- NAVBAR BRAND -->
-			<a class="l-pull-left" href="<?php echo get_home_url(); ?>">
-				<img class="logo" src="<?php bloginfo('stylesheet_directory'); ?>/assets/img/fernkopie-logo.jpg" alt="Fernkopie Logo" title="Fernkopie Logo">
-			</a>
+			<div class="navbar-left l-pull-left">
+				<a class="l-pull-left" href="<?php echo get_home_url(); ?>">
+					<img class="logo" src="<?php bloginfo('stylesheet_directory'); ?>/assets/img/fernkopie-logo.jpg" alt="Fernkopie Logo" title="Fernkopie Logo">
+				</a>
+				<nav class="nav-categories is-displayed-lg">
+					<p class="vh6">
+						Wir gestalten 
+						<a href="<?php echo esc_url( $link_vis_ident ); ?>">visuelle Identitäten</a>,
+						<a href="<?php echo esc_url( $link_info_med ); ?>">Informationsmedien</a> und 
+						<a href="<?php echo esc_url( $link_schrift_raum ); ?>">Schrift im Raum</a>.
+					</p>
+				</nav>
+			</div><!-- /.navbar-left -->
 			
 			
 			<!-- NAVBAR BURGER-BUTTON -->

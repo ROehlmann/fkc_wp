@@ -4,11 +4,12 @@ jQuery(document).ready(function(){
 	var screenWidth = initialScreenWidth;
 	var minWidthDesktop = 992;
 	
-	var $dropdownParent = $('.dropdown-unless-desktop').closest('li');
+	var $dropdownParent = $('.dropdown-unless-desktop').closest('li').children('a');
 	
 	function dropdown(event) {
+
 	event.preventDefault();
-	$(this).find(".dropdown").slideToggle();
+	$(this).closest('li').find(".dropdown").slideToggle();
 	}
 	
 	
