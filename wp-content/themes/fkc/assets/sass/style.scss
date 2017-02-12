@@ -892,8 +892,15 @@ margin: 0 auto -100px; // must be equal to footer height for sticky footer to wo
 	width: auto;
 	height: auto;
 }
+
+// Elemente mit grid-item--size2 gehen im small screen view über die ganze Breite
 .grid-item.grid-item--size2 {
 	width: 100%;
+}
+@media screen and (min-width: 1200px ) {
+	.grid-item.grid-item--size2 {
+		width: 50%;
+	}
 }
 
 #red {

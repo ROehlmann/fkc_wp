@@ -89,7 +89,7 @@ get_header(); ?>
 			    	$feature_image					= get_field('feature_image'); 
 			    ?>
 
-			    	<div class="grid-item grid-item--small-border">
+			    	<div class="grid-item grid-item--size2 grid-item--small-border">
 				    	
 				    	<figure class="gallery-item">
 							<a href="<?php echo get_permalink();?>" >

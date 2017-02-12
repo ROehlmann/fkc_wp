@@ -87,7 +87,6 @@ html, body {
 
 body {
   background-color: #FFFFFF;
-  background-color: black;
   font-family: "BrownPro-Light"; }
 
 img {
@@ -296,8 +295,14 @@ a:hover, a:active, a:focus, a:visited {
 .l-pull-left {
   float: left; }
 
+.l-clear-left {
+  clear: left; }
+
 .l-pull-right {
   float: right; }
+
+.l-clear-right {
+  clear: right; }
 
 .l-center-img {
   display: block;
@@ -524,6 +529,29 @@ a:hover, a:active, a:focus, a:visited {
 .dropdown {
   display: none; }
 
+/* Slider Module */
+.slider-button-prev,
+.slider-button-next {
+  position: absolute;
+  cursor: pointer;
+  background: transparent;
+  top: 50%;
+  -webkit-transform: translate(0, -50%);
+  -ms-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+  padding: 0;
+  border: none; }
+
+.slider-button-prev {
+  left: -40px; }
+
+.slider-button-next {
+  right: -40px; }
+
+/* Lightbox Module */
+.lightboxOverlay {
+  background-color: white; }
+
 /* Projects-all Module */
 /* Weiter generalisieren und wiederverwende, wenn andere Sections ähnlich aufgebaut sind */
 .projects-all-list {
@@ -598,6 +626,59 @@ a:hover, a:active, a:focus, a:visited {
 @media screen and (min-width: 1200px) {
   .project-details-side-info-pic {
     margin-bottom: 50px; } }
+/* Masonry Styles Module */
+.grid {
+  margin: 0 0px; }
+
+.grid.grid--small-border {
+  margin: 0 14px; }
+
+.grid-sizer,
+.grid-item {
+  width: 50%; }
+
+.grid-item {
+  border: 15px solid white;
+  box-sizing: border-box; }
+
+.grid-item.grid-item--small-border {
+  border: 1px solid white; }
+
+.grid-item > img {
+  width: auto;
+  height: auto; }
+
+.grid-item.grid-item--size2 {
+  width: 100%; }
+
+#red {
+  background-color: red;
+  height: 300px; }
+
+#blue {
+  background-color: blue;
+  height: 500px; }
+
+#green {
+  background-color: green;
+  height: 200px; }
+
+#yellow {
+  background-color: yellow;
+  height: 500px; }
+
+#purple {
+  background-color: purple;
+  height: 700px; }
+
+#brown {
+  background-color: brown;
+  height: 300px; }
+
+#pink {
+  background-color: pink;
+  height: 200px; }
+
 /* ==========================================================================
    State styles
    ========================================================================== */
