@@ -250,7 +250,7 @@ a:hover, a:active, a:focus, a:visited {
   margin: 0 auto -100px; }
 
 #minheight {
-  height: 170px;
+  height: 150px;
   clear: both; }
 
 #footermain {
@@ -621,12 +621,25 @@ a:hover, a:active, a:focus, a:visited {
     padding-bottom: 60px; } }
 /* Archiv Selection Module */
 /* Weiter generalisieren und wiederverwende, wenn andere Sections ähnlich aufgebaut sind */
+.archiv-selection {
+  margin-top: 30px; }
+
+.archiv-selection.archiv-page {
+  margin-top: 60px;
+  margin-bottom: 60px; }
+
+.archiv-selection.category-page {
+  margin-top: 100px; }
+
 .archiv-selection-col {
   border-left: 1px solid #D8D8D8; }
 
 .archiv-selection-col:first-child {
   border-left: none; }
 
+@media screen and (min-width: 1200px) {
+  .archiv-selection-col.no-border-lg {
+    border: none; } }
 /* Project Details Module */
 /* Weiter generalisieren und wiederverwende, wenn andere Sections ähnlich aufgebaut sind */
 @media screen and (min-width: 1200px) {
