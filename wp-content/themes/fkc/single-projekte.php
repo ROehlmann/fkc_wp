@@ -89,7 +89,7 @@ $project_id 				= get_the_ID();
 				<!-- Empty div required by the Masonry plugin -->
 				<div class="grid-sizer"></div>
 				
-				<div class="grid-item">
+				<div class="grid-item grid-item--size2">
 					<p class="vh5"><?php echo $description_main; ?></p>
 					<p class="vh6"><?php echo $facts_main; ?></p>
 				</div><!-- /.grid-item -->
@@ -103,12 +103,16 @@ $project_id 				= get_the_ID();
 						$kind_of_content = get_sub_field('kind_of_content'); ?>
 							<?php if ( $kind_of_content == 'text') :
 								$additional_text = get_sub_field('additional_text'); ?>
-								<div class="grid-item">
+								<div class="grid-item grid-item--size2">
 									<p class="vh5"><?php echo $additional_text; ?></p>
 								</div><!-- /.grid-item -->
 							<?php elseif ( $kind_of_content == 'pic' ) :
-								$additional_image = get_sub_field('additional_image'); ?>
-								<div class="grid-item">
+								$additional_image = get_sub_field('additional_image');
+								$small_screen_layout = get_sub_field('small_screen_layout'); 
+								$additional_layout_class = '';
+								if($small_screen_layout == 'span2') { $additional_layout_class = 'grid-item--size2'; }?>
+											
+								<div class="grid-item <?php echo $additional_layout_class; ?>">
 									<img src="<?php echo $additional_image['url']; ?>" alt="<?php echo $additional_image['alt']; ?>">
 								</div><!-- /.grid-item -->
 							<?php endif; ?>		
