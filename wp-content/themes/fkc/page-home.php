@@ -30,7 +30,7 @@ get_header(); ?>
 
 	<!-- Leistungsspektrum
     ===================================================== -->
-	<div id="leistungsspektrum-section" class="is-hidden-lg">
+	<div id="leistungsspektrum-section" class="is-hidden-md">
 		<div class="container">
 			
 			<div class="row">

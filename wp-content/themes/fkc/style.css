@@ -291,6 +291,10 @@ a:hover, a:active, a:focus, a:visited {
 @media screen and (min-width: 1200px) {
   #carousel-section {
     margin-bottom: 80px; } }
+/* Similar Projects Section */
+@media screen and (min-width: 1200px) {
+  #similar-projects-section hr {
+    display: none; } }
 /* Box */
 .l-pull-left {
   float: left; }

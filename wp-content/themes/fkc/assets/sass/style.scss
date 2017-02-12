@@ -321,12 +321,12 @@ a:hover, a:active, a:focus, a:visited {
    Layout styles
    ========================================================================== */
 #page-wrap {
-position: relative;
-width: 100%;
-height: auto !important;
-height: 100%;
-min-height: 100%;
-margin: 0 auto -100px; // must be equal to footer height for sticky footer to work
+	position: relative;
+	width: 100%;
+	height: auto !important;
+	height: 100%;
+	min-height: 100%;
+	margin: 0 auto -100px; // must be equal to footer height for sticky footer to work
 }
 
 #minheight {
@@ -391,6 +391,13 @@ margin: 0 auto -100px; // must be equal to footer height for sticky footer to wo
 }
 
 #e-publishing-section {
+}
+
+/* Similar Projects Section */
+@media screen and (min-width: 1200px) {
+	#similar-projects-section hr {
+		display: none;
+	}
 }
 
 /* Box */

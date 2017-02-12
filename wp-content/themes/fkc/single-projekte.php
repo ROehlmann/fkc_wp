@@ -23,6 +23,8 @@ $facts_main					= get_field('facts_main');
 
 
 $project_id 				= get_the_ID();
+$project_id_array			= array($project_id);
+$project_category 			= wp_get_post_categories($project_id);
 ?>
 
 
@@ -34,7 +36,6 @@ $project_id 				= get_the_ID();
 	<!-- Content section header
     ===================================================== -->
 	<div id="content-section-header" class="container">
-		
 	
 		<div class="row">
 			<div class="col-xs-8 col-lg-10 col-lg-offset-1">
@@ -140,47 +141,58 @@ $project_id 				= get_the_ID();
 
 	<!-- Ähnliche Projekte
     ===================================================== -->
-	<div class="container">
-		<hr>
-		<p class="vh6">ähnliche Projekte</p>
-		<div class="row">
-			<div class="col-xs-6 col-lg-4">
-				<figure class="gallery-item vh6">
-					<a href="projekte-einzel.html">
-						<img src="img/beispielbilder/combo-2.jpg">
-						<figcaption>
-							<h3 class="l-bold">Guitar Street</h3>
-						</figcaption>
-					</a>
-				</figure>
-			</div><!-- /.col -->
+    <div id="similar-projects-section">
+	
+    	<?php
+	    $args = array(
+		    'post_type'		 => 'projekte',
+		    'orderby'		 => 'rand',
+		    'posts_per_page' => 3,
+		    'cat'			 => $project_category,
+		    'post__not_in'	 => $project_id_array
+		    
+	    );
+	    
+	    $similar_projects = new WP_Query( $args );
+	    
+	    if( $similar_projects->have_posts() ) : ?>
+	    	
+	    	<div class="container">
+	    	
+	    		<hr>
+	    		<p class="vh6">ähnliche Projekte</p>
+	    		
+	    		<div class="row">
+		    		
+					<?php // The Loop
+				    while ( $similar_projects->have_posts() ) : $similar_projects->the_post();
+				    	$feature_image		= get_field('feature_image');
+				    	$customer			= get_field('customer');
+				    	$project_title		= get_field('project_title'); ?>
+				    	
+				    	<div class="col-xs-6 col-lg-4">
+							<figure class="gallery-item">
+								<a href="<?php echo get_permalink();?>" >
+									<img src="<?php echo $feature_image['url']; ?>" alt="<?php echo $feature_image['alt']; ?>" >
+									<figcaption>
+										<h3 class="l-bold vh6"><?php echo $customer; ?></h3>
+										<p class="vh6"><?php echo $project_title; ?></p>
+									</figcaption>
+								</a>
+							</figure>
+						</div><!-- /.col -->
+				    	
+				    <?php endwhile; ?>
+		    
+	    		</div><!-- /.row -->
+		    </div><!-- /.container -->
+		    
+		<?php endif; ?>
+		<?php wp_reset_postdata(); ?>
+
+    </div><!-- /#similar-projects -->
 			
-			<div class="col-xs-6 col-lg-4">
-				<figure class="gallery-item vh6">
-					<a href="projekte-einzel.html">
-						<img src="img/beispielbilder/combo-3.jpg">
-						<figcaption>
-							<h3 class="l-bold">Royal Scottish Railway Services</h3>
-						</figcaption>
-					</a>
-				</figure>
-			</div><!-- /.col -->
 			
-			<div class="col-xs-6 col-lg-4 is-displayed-lg">
-				<figure class="gallery-item vh6">
-					<a href="projekte-einzel.html">
-						<img src="img/beispielbilder/combo-1.jpg">
-						<figcaption>
-							<h3 class="l-bold">Extravagant Flowerpots Inc.</h3>
-						</figcaption>
-					</a>
-				</figure>
-			</div><!-- /.col -->
-		</div><!-- /.row -->
-
-	</div><!-- /.container -->			
-
-
 			
 </div><!-- /#contentmain -->
 
