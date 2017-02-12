@@ -65,32 +65,39 @@ get_header(); ?>
     
 			<!-- Projektauswahlmatrix -->
 			<div class="row">
-	    
-			    <?php while ( have_posts() ) : the_post();
-			    	// Könnte ich auch direkt in den Loop mit einbauen mit einer meta_query 
-			    	$show_as				= get_field('show_as');
-			    	
-			    	if ( $show_as != 'pic' ) { continue; }
-			    	
-			    	$customer						= get_field('customer');
-			    	$project_title 					= get_field('project_title');
-			    	$feature_image					= get_field('feature_image'); 
-			    ?>
-		
-				<div class="col-xs-12 col-lg-6">
-					<figure class="gallery-item">
-						<a href="<?php echo get_permalink();?>" >
-							<img src="<?php echo $feature_image['url']; ?>" alt="<?php echo $feature_image['alt']; ?>" >
-							<figcaption>
-								<h3 class="l-bold vh6"><?php echo $customer; ?></h3>
-								<p class="vh6"><?php echo $project_title; ?></p>
-							</figcaption>
-						</a>
-					</figure>
-				</div><!-- /.col -->
-		
-				<?php endwhile; ?>
+				<div class="grid grid--small-border">
+					
+			    	<!-- Empty div required by the Masonry plugin -->
+					<div class="grid-sizer"></div>
+					
+					    <?php while ( have_posts() ) : the_post();
+					    	// Könnte ich auch direkt in den Loop mit einbauen mit einer meta_query 
+					    	$all_projects_show_as			= get_field('all_projects_show_as');
+					    	
+					    	if ( $all_projects_show_as != 'pic' ) { continue; }
+					    	
+					    	$customer						= get_field('customer');
+					    	$project_title 					= get_field('project_title');
+					    	$feature_image					= get_field('feature_image'); 
+					    ?>
 				
+						<div class="grid-item grid-item--size2 grid-item--small-border">
+							
+							<figure class="gallery-item">
+								<a href="<?php echo get_permalink();?>" >
+									<img src="<?php echo $feature_image['url']; ?>" alt="<?php echo $feature_image['alt']; ?>" >
+									<figcaption>
+										<h3 class="l-bold vh6"><?php echo $customer; ?></h3>
+										<p class="vh6"><?php echo $project_title; ?></p>
+									</figcaption>
+								</a>
+							</figure>
+							
+						</div><!-- /.grid-item -->
+				
+						<?php endwhile; ?>
+						
+				</div><!-- /.grid -->
 			</div><!-- /.row -->
 		<?php endif; ?>
 		<?php rewind_posts(); ?>
@@ -105,13 +112,13 @@ get_header(); ?>
 							<ul class="l-list-no-bullets l-inline">
 								<?php while ( have_posts() ) : the_post();
 						    	// Könnte ich auch direkt in den Loop mit einbauen mit einer meta_query 
-						    	$show_as				= get_field('show_as');
+						    	$all_projects_show_as		= get_field('all_projects_show_as');
 						    	
-						    	if ( $show_as != 'text' ) { continue; }
+						    	if ( $all_projects_show_as != 'text' ) { continue; }
 						    	
-						    	$customer						= get_field('customer');
-						    	$project_title 					= get_field('project_title');
-						    	$feature_image					= get_field('feature_image'); 
+						    	$customer					= get_field('customer');
+						    	$project_title 				= get_field('project_title');
+						    	$feature_image				= get_field('feature_image'); 
 						    	?>
 						    	
 						    		<li class="l-inline">
