@@ -37,7 +37,7 @@ get_header(); ?>
 		
 		<div class="row">
 			<div class="col-xs-8 col-lg-10 col-lg-offset-1">
-				<h1 class="vh1 l-bold"><?php echo get_cat_name($wp_query->queried_object_id); ?></h1>
+				<h1 class="vh1 l-bold l-not-bold-lg"><?php echo get_cat_name($wp_query->queried_object_id); ?></h1>
 				<p class="vh2">VI: hier wird ein kurzer erklärender Text zu der jeweiligen Kategorie stehen</p>
 			</div><!-- /.col -->
 		</div><!-- /.row -->

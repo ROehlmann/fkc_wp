@@ -494,11 +494,19 @@ margin: 0 auto -100px; // must be equal to footer height for sticky footer to wo
 }
 
 
-
 /* Text */
 .l-bold {
 	font-family: $font-base-bold;
 }
+.l-not-bold {
+	font-family: $font-base-light;
+}
+@media screen and (min-width: 1200px) { 
+	.l-not-bold-lg {
+		font-family: $font-base-light !important;
+	}
+}
+
 
 .l-underlined {
 	text-decoration: underline;
@@ -508,28 +516,7 @@ margin: 0 auto -100px; // must be equal to footer height for sticky footer to wo
 	text-transform: uppercase;
 }
 
-.l-fontsize-larger,
-.l-fontsize-larger > a {
-	font-size: 15px;
-}
-@media screen and (min-width: 1200px) {
-	.l-fontsize-larger,
-	.l-fontsize-larger > a {
-		font-size: 35px;
-	}
-}
 
-/* gleich wie callout. Evtl ersetzen */
-.l-fontsize-huge,
-.l-fontsize-huge > a {
-	font-size: 20px;
-}
-@media screen and (min-width: 1200px) {
-	.l-fontsize-huge,
-	.l-fontsize-huge > a {
-		font-size: 45px;
-	}
-}
 
 
 
@@ -550,7 +537,20 @@ margin: 0 auto -100px; // must be equal to footer height for sticky footer to wo
 /* ==========================================================================
    Module styles
    ========================================================================== */
+
+/* Bootstrap changes */
+@media (min-width: 1600px) {
+  .container {
+    width: 1440px;
+  }
+}
+
+
+
+
    
+   
+/* Logo Module */   
 .logo {
    width: 150px;
 }

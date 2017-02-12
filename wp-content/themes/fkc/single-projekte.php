@@ -38,7 +38,7 @@ $project_id 				= get_the_ID();
 	
 		<div class="row">
 			<div class="col-xs-8 col-lg-10 col-lg-offset-1">
-				<h1 class="vh1 l-bold"><?php the_title(); ?></h1>
+				<h1 class="vh1 l-bold l-not-bold-lg"><?php the_title(); ?></h1>
 				<?php if ( !empty($subheader) ) : ?>
 					<p class="vh2"><?php echo $subheader; ?></p>
 				<?php endif; ?>
