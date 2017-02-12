@@ -70,32 +70,32 @@ get_header(); ?>
 			    	<!-- Empty div required by the Masonry plugin -->
 					<div class="grid-sizer"></div>
 					
-					    <?php while ( have_posts() ) : the_post();
-					    	// Könnte ich auch direkt in den Loop mit einbauen mit einer meta_query 
-					    	$all_projects_show_as			= get_field('all_projects_show_as');
-					    	
-					    	if ( $all_projects_show_as != 'pic' ) { continue; }
-					    	
-					    	$customer						= get_field('customer');
-					    	$project_title 					= get_field('project_title');
-					    	$feature_image					= get_field('feature_image'); 
-					    ?>
-				
-						<div class="grid-item grid-item--size2 grid-item--small-border">
-							
-							<figure class="gallery-item">
-								<a href="<?php echo get_permalink();?>" >
-									<img src="<?php echo $feature_image['url']; ?>" alt="<?php echo $feature_image['alt']; ?>" >
-									<figcaption>
-										<h3 class="l-bold vh6"><?php echo $customer; ?></h3>
-										<p class="vh6"><?php echo $project_title; ?></p>
-									</figcaption>
-								</a>
-							</figure>
-							
-						</div><!-- /.grid-item -->
-				
-						<?php endwhile; ?>
+				    <?php while ( have_posts() ) : the_post();
+				    	// Könnte ich auch direkt in den Loop mit einbauen mit einer meta_query 
+				    	$all_projects_show_as		= get_field('all_projects_show_as');
+				    	
+				    	if ( $all_projects_show_as != 'pic' ) { continue; }
+				    	
+				    	$customer						= get_field('customer');
+				    	$project_title 					= get_field('project_title');
+				    	$feature_image					= get_field('feature_image'); 
+				    ?>
+			
+					<div class="grid-item grid-item--size2 grid-item--small-border">
+						
+						<figure class="gallery-item">
+							<a href="<?php echo get_permalink();?>" >
+								<img src="<?php echo $feature_image['url']; ?>" alt="<?php echo $feature_image['alt']; ?>" >
+								<figcaption>
+									<h3 class="l-bold vh6"><?php echo $customer; ?></h3>
+									<p class="vh6"><?php echo $project_title; ?></p>
+								</figcaption>
+							</a>
+						</figure>
+						
+					</div><!-- /.grid-item -->
+			
+					<?php endwhile; ?>
 						
 				</div><!-- /.grid -->
 			</div><!-- /.row -->
