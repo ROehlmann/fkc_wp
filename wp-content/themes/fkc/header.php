@@ -64,7 +64,8 @@
 </head>
 
 <body <?php body_class(); ?>>
-
+		
+	
 <!-- Necessary for sticky footer -->
 <div id="page-wrap">
 
@@ -87,9 +88,9 @@
 				<nav class="nav-categories is-displayed-lg">
 					<p class="vh6">
 						Wir gestalten 
-						<a href="<?php echo esc_url( $link_vis_ident ); ?>">visuelle Identitäten</a>,
-						<a href="<?php echo esc_url( $link_info_med ); ?>">Informationsmedien</a> und 
-						<a href="<?php echo esc_url( $link_schrift_raum ); ?>">Schrift im Raum</a>.
+						<a class="nav-item-identitaeten" href="<?php echo esc_url( $link_vis_ident ); ?>">visuelle Identitäten</a>,
+						<a class="nav-item-informationsmedien" href="<?php echo esc_url( $link_info_med ); ?>">Informationsmedien</a> und 
+						<a class="nav-item-schrift"href="<?php echo esc_url( $link_schrift_raum ); ?>">Schrift im Raum</a>.
 					</p>
 				</nav>
 			</div><!-- /.navbar-left -->
@@ -113,25 +114,25 @@
 			
 			<ul>
 				<li>
-					<a href="<?php echo get_post_type_archive_link( 'projekte' ); ?>">
+					<a class="nav-item-projekte" href="<?php echo get_post_type_archive_link( 'projekte' ); ?>">
 						Projekte
 					</a>
 				</li>
 				
 				<li class="is-hidden-md">
-					<a href="<?php echo esc_url( $link_vis_ident ); ?>">
+					<a class="nav-item-identitaeten" href="<?php echo esc_url( $link_vis_ident ); ?>">
 						visuelle Identitäten
 					</a>
 				</li>
 				
 				<li class="is-hidden-md">
-					<a href="<?php echo esc_url( $link_info_med ); ?>">
+					<a class="nav-item-informationsmedien" href="<?php echo esc_url( $link_info_med ); ?>">
 						Informationsmedien
 					</a>
 				</li>
 				
 				<li class="is-hidden-md">
-					<a href="<?php echo esc_url( $link_schrift_raum); ?>">
+					<a class="nav-item-schrift" href="<?php echo esc_url( $link_schrift_raum); ?>">
 						Schrift im Raum
 					</a>
 				</li>
@@ -139,31 +140,31 @@
 				<!-- Für den Moment versteckt, bis die Inhalte stehen. Zum wieder
 					 Sichtbar machen einfach "is-hidden" durch "is-hidden-md" ersetzen -->
 				<li class="is-hidden">
-					<a href="#0">
+					<a class="nav-item-epublish"href="#0">
 						ePublish
 					</a>
 				</li>
 				
 				<li>
-					<a href="<?php echo get_post_type_archive_link( 'archiv' ); ?>">
+					<a class="nav-item-archiv" href="<?php echo get_post_type_archive_link( 'archiv' ); ?>">
 						Archiv
 					</a>
 					
 					<ul class="dropdown dropdown-unless-desktop">
 						<li>
-							<a href="<?php echo esc_url( $link_editorial ); ?>">
+							<a class="nav-item-editorial" href="<?php echo esc_url( $link_editorial ); ?>">
 								Editorial
 							</a>
 						</li>
 						
 						<li>
-							<a href="<?php echo esc_url( $link_plakat ); ?>">
+							<a class="nav-item-plakat" href="<?php echo esc_url( $link_plakat ); ?>">
 								Plakat
 							</a>
 						</li>
 						
 						<li>
-							<a href="<?php echo esc_url( $link_briefmarken ); ?>">
+							<a class="nav-item-briefmarken" href="<?php echo esc_url( $link_briefmarken ); ?>">
 								Briefmarken
 							</a>
 						</li>
@@ -172,7 +173,7 @@
 				</li>
 				
 				<li>
-					<a href="<?php echo get_page_link(50); ?>">
+					<a class="nav-item-info" href="<?php echo get_page_link(50); ?>">
 						Info
 					</a>
 				</li>

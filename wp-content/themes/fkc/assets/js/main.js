@@ -4,12 +4,42 @@ jQuery(document).ready(function(){
 	var screenWidth = initialScreenWidth;
 	var minWidthDesktop = 992;
 	
-	var $dropdownParent = $('.dropdown-unless-desktop').closest('li').children('a');
-	
-	function dropdown(event) {
+	/* Indicate in Navigation which page we are on */
+	if ( $('body').hasClass('post-type-archive-projekte') ) {
+		$('.nav-item-projekte').addClass('is-active');
+	} else if ( $('body').hasClass('post-type-archive-archiv') ) {
+		$('.nav-item-archiv').addClass('is-active');
+	} else if ( $('body').hasClass('page-template-page-info') ) {
+		$('.nav-item-info').addClass('is-active');
+	} else if ( $('body').hasClass('category-visuelle-identitaeten') ) {
+		// $('.nav-item-projekte').addClass('is-active');
+		$('.nav-item-identitaeten').addClass('is-active');
+	} else if ( $('body').hasClass('category-informationsmedien') ) {
+		// $('.nav-item-projekte').addClass('is-active');
+		$('.nav-item-informationsmedien').addClass('is-active');
+	} else if ( $('body').hasClass('category-schrift-im-raum') ) {
+		// $('.nav-item-projekte').addClass('is-active');
+		$('.nav-item-schrift').addClass('is-active');
+	} else if ( $('body').hasClass('category-editorial') ) {
+		// $('.nav-item-archiv').addClass('is-active');
+		$('.nav-item-editorial').addClass('is-active');
+	} else if ( $('body').hasClass('category-plakat') ) {
+		// $('.nav-item-archiv').addClass('is-active');
+		$('.nav-item-plakat').addClass('is-active');
+	} else if ( $('body').hasClass('category-briefmarken') ) {
+		// $('.nav-item-archiv').addClass('is-active');
+		$('.nav-item-briefmarken').addClass('is-active');
+	}
 
-	event.preventDefault();
-	$(this).closest('li').find(".dropdown").slideToggle();
+
+	
+	
+	
+	/* Function for the dropdown menu */
+	var $dropdownParent = $('.dropdown-unless-desktop').closest('li').children('a');
+	function dropdown(event) {
+		event.preventDefault();
+		$(this).closest('li').find(".dropdown").slideToggle();
 	}
 	
 	

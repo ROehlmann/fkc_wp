@@ -479,7 +479,17 @@ a:hover, a:active, a:focus, a:visited {
 
 .nav-categories > p {
   display: inline-block;
+  margin-top: 0;
   margin-left: 20px; }
+
+.nav-categories > p > a {
+  text-decoration: underline; }
+
+.nav-categories > p > a.is-active {
+  text-decoration: none; }
+
+.nav-categories > p > a:hover {
+  text-decoration: none; }
 
 /* Navbar Module */
 .navbar-nav {
@@ -487,7 +497,8 @@ a:hover, a:active, a:focus, a:visited {
 
 .navbar-nav > ul,
 .navbar-nav > ol {
-  list-style: none; }
+  list-style: none;
+  margin-top: 0; }
 
 .navbar-nav > ul > li,
 .navbar-nav > ol > li {
@@ -701,6 +712,9 @@ a:hover, a:active, a:focus, a:visited {
 /* ==========================================================================
    State styles
    ========================================================================== */
+.is-active {
+  font-family: "BrownPro-Bold" !important; }
+
 /* ==========================================================================
    Print styles
    ========================================================================== */

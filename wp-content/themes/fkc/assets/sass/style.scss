@@ -663,9 +663,20 @@ margin: 0 auto -100px; // must be equal to footer height for sticky footer to wo
 
 .nav-categories > p {
 	display: inline-block;
+	margin-top: 0;
 	margin-left: 20px;
 }
+.nav-categories > p > a {
+	text-decoration: underline;
+}
 
+.nav-categories > p > a.is-active {
+	text-decoration: none;
+}
+
+.nav-categories > p > a:hover {
+	text-decoration: none;
+}
 
 /* Navbar Module */
 .navbar-nav {
@@ -675,6 +686,7 @@ margin: 0 auto -100px; // must be equal to footer height for sticky footer to wo
 .navbar-nav > ul,
 .navbar-nav > ol {
    list-style: none;
+   margin-top: 0;
 }
 
 .navbar-nav > ul > li,
@@ -956,7 +968,9 @@ margin: 0 auto -100px; // must be equal to footer height for sticky footer to wo
    State styles
    ========================================================================== */
 
-
+.is-active {
+	font-family: $font-base-bold !important;
+}
 
 
 
