@@ -36,8 +36,15 @@
 <script src="<?php bloginfo('stylesheet_directory'); ?>/assets/vendor/masonry/masonry.pkgd.min.js"></script>
 <!-- Script for Slick Slider -->
 <script src="<?php bloginfo('stylesheet_directory'); ?>/assets/vendor/slick/slick.min.js"></script>
-<!-- Script for Featherlight Lightbox-->
-<script src="<?php bloginfo('stylesheet_directory'); ?>/assets/vendor/featherlight/featherlight.min.js"></script>
+<!-- Script for Lightbox2 -->
+<script src="<?php bloginfo('stylesheet_directory'); ?>/assets/vendor/lightbox2/js/lightbox.min.js"></script>
+<!-- Script initializing Lightbox2 with options -->
+<script>
+    lightbox.option({
+      'disableScrolling': true,
+      'albumLabel':	'Bild %1 von %2'
+    })
+</script>
 
 
 

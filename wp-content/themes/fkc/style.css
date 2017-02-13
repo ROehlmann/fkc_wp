@@ -98,7 +98,7 @@ h1, h2, h3, h4, h5, h6, p, a, ul, ol, li, address {
   font-weight: normal;
   font-style: normal; }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 992px) {
   h1, h2, h3, h4, h5, h6, p, a, ul, ol, li, address {
     font-size: 20px; } }
 a:hover, a:active, a:focus, a:visited {
@@ -247,19 +247,36 @@ a:hover, a:active, a:focus, a:visited {
   height: auto !important;
   height: 100%;
   min-height: 100%;
-  margin: 0 auto -100px; }
+  margin: 0 auto -90px; }
 
+@media screen and (min-width: 992px) {
+  #page-wrap {
+    margin: 0 auto -70px; } }
 #minheight {
-  height: 150px;
+  height: 120px;
   clear: both; }
 
+@media screen and (min-width: 992px) {
+  #minheight {
+    height: 140px; } }
 #footermain {
   position: absolute;
   bottom: 0 !important;
   width: 100%;
-  height: 100px;
+  height: 70px;
   margin: 0px auto; }
 
+@media screen and (min-width: 992px) {
+  #footermain {
+    position: absolute;
+    height: 90px;
+    margin: 0px auto; } }
+#footermain > .container {
+  margin-top: 18px; }
+
+@media screen and (min-width: 992px) {
+  #footermain > .container {
+    margin-top: 0; } }
 /* DUPLICATION! #projectsheader und #content-section-header mergen! */
 #projectsheader {
   margin-bottom: 15px; }
@@ -288,13 +305,21 @@ a:hover, a:active, a:focus, a:visited {
 #carousel-section {
   margin-bottom: 30px; }
 
-@media screen and (min-width: 1200px) {
-  #carousel-section {
-    margin-bottom: 80px; } }
 /* Similar Projects Section */
-@media screen and (min-width: 1200px) {
+#similar-projects-section {
+  margin-top: 60px; }
+
+@media screen and (min-width: 992px) {
   #similar-projects-section hr {
     display: none; } }
+/* Team Section */
+#team-section li {
+  margin-bottom: 20px; }
+
+/* Address Section */
+#address-section address {
+  padding-top: 20px; }
+
 /* Box */
 .l-pull-left {
   float: left; }
@@ -417,11 +442,14 @@ a:hover, a:active, a:focus, a:visited {
   margin-left: 20px; }
 
 .gallery-item figcaption > h3 {
-  margin-top: 20px; }
+  margin-top: 20px;
+  margin-bottom: 0; }
 
 .gallery-item figcaption > p {
   visibility: hidden;
   opacity: 0;
+  margin-top: 0;
+  margin-bottom: 0;
   -webkit-transition: visibility 0.4s, opacity 0.4s;
   -moz-transition: visibility 0.4s, opacity 0.4s;
   -ms-transition: visibility 0.4s, opacity 0.4s;
@@ -433,7 +461,11 @@ a:hover, a:active, a:focus, a:visited {
   opacity: 1; }
 
 /* Gallery-Item Subclass "gallery-item-archiv" */
-.gallery-item.gallery-item-archiv a > img {
+.gallery-item.gallery-item-archiv {
+  padding-top: 30px;
+  padding-bottom: 30px; }
+
+.gallery-item.gallery-item-archiv img {
   opacity: 1;
   -webkit-transform: translateZ(0);
   -webkit-transition: opacity 0.4s;
@@ -442,10 +474,10 @@ a:hover, a:active, a:focus, a:visited {
   -o-transition: opacity 0.4s;
   transition: opacity 0.4s; }
 
-.gallery-item.gallery-item-archiv a:hover > img {
+.gallery-item.gallery-item-archiv:hover img {
   opacity: 0.2; }
 
-.gallery-item.gallery-item-archiv a:hover figcaption {
+.gallery-item.gallery-item-archiv figcaption {
   background-color: transparent;
   opacity: 1; }
 
@@ -461,10 +493,10 @@ a:hover, a:active, a:focus, a:visited {
   transition: visibility 0.4s, opacity 0.4s; }
 
 .gallery-item.gallery-item-archiv figcaption > h3 {
-  margin-top: 20px; }
+  margin-top: 30px; }
 
-.gallery-item.gallery-item-archiv a:hover figcaption > h3,
-.gallery-item.gallery-item-archiv a:hover figcaption > p {
+.gallery-item.gallery-item-archiv:hover figcaption > h3,
+.gallery-item.gallery-item-archiv:hover figcaption > p {
   visibility: visible;
   opacity: 1; }
 

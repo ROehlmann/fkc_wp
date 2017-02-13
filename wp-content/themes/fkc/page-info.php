@@ -79,7 +79,7 @@ $programmer_email 	= get_field('programmer_email');
 			<?php
 			// check if the repeater field has rows of data
 			if( have_rows('team') ): ?>
-				<div class="col-xs-12 col-lg-6">
+				<div id="team-section" class="col-xs-12 col-lg-6">
 					
 					<ul class="l-list-no-bullets">	
 						<?php 
@@ -93,7 +93,7 @@ $programmer_email 	= get_field('programmer_email');
 							<?php if ( !empty($name) ) : ?>
 								<p class="vh6">
 									<span class="l-bold"><?php echo $name; ?></span><br>
-									<?php if ( !empty($postion) ) : ?>
+									<?php if ( !empty($position) ) : ?>
 										<?php echo $position; ?><br>
 									<?php endif; ?>
 									<?php if ( !empty($area) ) : ?>
@@ -112,7 +112,7 @@ $programmer_email 	= get_field('programmer_email');
 			
 			<!-- Kontaktinformationen
 		    ===================================================== -->
-			<div class="col-xs-12 col-lg-6 l-pull-right l-clear-right">
+			<div id="address-section" class="col-xs-12 col-lg-6 l-pull-right l-clear-right">
 				
 				<hr class="is-hidden-lg">
 		

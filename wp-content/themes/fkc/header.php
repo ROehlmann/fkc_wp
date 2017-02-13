@@ -53,8 +53,8 @@
 <link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_directory'); ?>/assets/vendor/slick/slick.css"/>
 <!-- slick slider theme styles -->
 <link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_directory'); ?>/assets/vendor/slick/slick-theme.css"/>
-<!-- featherlight styles -->
-<link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_directory'); ?>/assets/vendor/featherlight/featherlight.css"/>
+<!-- lightbox2 styles -->
+<link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_directory'); ?>/assets/vendor/lightbox2/css/lightbox.min.css"/>
 
 
 <!-- Javascript -->

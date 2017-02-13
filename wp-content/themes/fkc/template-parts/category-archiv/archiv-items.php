@@ -22,8 +22,8 @@
 						
 								<?php if ( !empty($picture) ) : ?>
 								
-									<a href="<?php echo $picture['url'];?>" data-featherlight="#mylightbox">
-										<figure id="mylightbox" class="gallery-item gallery-item-archiv">
+									<a href="<?php echo $picture['url'];?>" data-lightbox="archiv-lightbox">
+										<figure class="gallery-item gallery-item-archiv">
 											<img src="<?php echo $picture['url']; ?>" alt="<?php echo $picture['alt']; ?>" >
 											<figcaption>
 												<h3 class="l-bold vh6"><?php echo $customer; ?></h3>
