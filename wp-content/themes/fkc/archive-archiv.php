@@ -37,7 +37,7 @@ get_header(); ?>
 			
 			<div class="row">
 				<div class="col-xs-10 col-lg-10 col-lg-offset-1">
-					<h1 class="vh1 l-bold l-not-bold-lg">Fernkopie Archiv</h1>
+					<h1 class="vh1 l-bold l-not-bold-md">Fernkopie Archiv</h1>
 					<p class="vh2">Hier wird ein kurzer Text zum Archiv stehen. Wahrscheinlich zwei- oder dreizeilig. Hier wird ein kurzer Text zum Archiv stehen. Wahrscheinlich vier- oder fünfzeilig.</p>
 				</div><!-- /.col -->
 			</div><!-- /.row -->
