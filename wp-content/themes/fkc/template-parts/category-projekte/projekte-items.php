@@ -1,6 +1,23 @@
 <?php 
+	
+$my_category = get_query_var('cat');
+
+$args = array(
+	    'post_type'		 	=> 'projekte',
+	    'cat'				=>  $my_category,
+		'meta_query'		=> 	array(
+			'key'			=> 'category_show_as',
+			'value'			=> 'pic',
+		),
+		'orderby'   		=> 'meta_value_num',
+        'meta_key'			=> 'rank_category_page_pic',
+        'order'    			=> 'DESC'	
+);
+	    
+//Define the loop based on arguments
+$query_featured_projects = new WP_Query( $args );
 //Display the contents
-if ( have_posts() ) : ?>
+if ( $query_featured_projects->have_posts() ) : ?>
 
 	<!-- Projektauswahlmatrix -->
 	<div class="row">
@@ -9,7 +26,7 @@ if ( have_posts() ) : ?>
 			<!-- Empty div required by the Masonry plugin -->
 			<div class="grid-sizer"></div>
 
-		    <?php while ( have_posts() ) : the_post();
+		    <?php while ( $query_featured_projects->have_posts() ) : $query_featured_projects->the_post();
 		    	// Könnte ich auch direkt in den Loop mit einbauen mit einer meta_query 
 		    	$category_show_as				= get_field('category_show_as');
 		    	
@@ -36,17 +53,33 @@ if ( have_posts() ) : ?>
 		</div><!-- /.grid -->
 	</div><!-- /.row -->
 <?php endif; ?>
-<?php rewind_posts(); ?>
+<?php wp_reset_postdata(); ?>
 
 <!-- Weitere Projekte
 ===================================================== -->
-<?php if ( have_posts() ) : ?>
+<?php
+	$args = array(
+    'post_type'		 	=> 'projekte',
+    'cat'				=>  $my_category,
+	'meta_query'		=> 	array(
+		'key'			=> 'category_show_as',
+		'value'			=> 'text',
+	),
+	'orderby'   		=> 'meta_value_num',
+    'meta_key'			=> 'rank_category_page_text',
+    'order'    			=> 'DESC'	
+	);
+
+	//Define the loop based on arguments
+	$query_additional_projects = new WP_Query( $args );
+
+		if ( $query_additional_projects->have_posts() ) : ?>
 	<div class="projects-all-list">
 		<div class="row">
 			<div class="col-xs-11 col-xs-offset-1 col-lg-10 col-lg-offset-1">
 				<p class="vh6">mehr Projekte</p>
 				<ul class="l-list-no-bullets l-inline">
-					<?php while ( have_posts() ) : the_post();
+					<?php while ( $query_additional_projects->have_posts() ) : $query_additional_projects->the_post();
 			    	// Könnte ich auch direkt in den Loop mit einbauen mit einer meta_query 
 			    	$category_show_as		= get_field('category_show_as');
 			    	
@@ -67,3 +100,4 @@ if ( have_posts() ) : ?>
 		</div><!-- /.row -->
 	</div><!-- /.projects-all-list -->
 <?php endif; ?>
+<?php wp_reset_postdata(); ?>
