@@ -66,8 +66,19 @@ get_header(); ?>
 
 
     <?php 
+    $args = array(
+	    'post_type'		 	=> 'projekte',
+		'meta_query'		=> 	array(
+			'key'			=> 'show_on_main_page',
+			'value'			=>  true,
+		),
+		'orderby'   		=> 'meta_value_num',
+        'meta_key'			=> 'rank_main_page',
+        'order'    			=> 'DESC'	
+    );
+	    
 	//Define the loop based on arguments
-	$query_featured_projects_home = new WP_Query( array('post_type' => 'projekte'));
+	$query_featured_projects_home = new WP_Query( $args );
 
     //Display the contents
     if ( $query_featured_projects_home->have_posts() ) : ?>
