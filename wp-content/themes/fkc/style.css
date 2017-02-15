@@ -688,10 +688,10 @@ a:hover, a:active, a:focus, a:visited {
     border: none; } }
 /* Project Details Module */
 /* Weiter generalisieren und wiederverwende, wenn andere Sections ähnlich aufgebaut sind */
-@media screen and (min-width: 1200px) {
-  .project-details-whitespace {
-    height: 120px;
-    width: auto; } }
+.project-details-whitespace {
+  height: 120px;
+  width: auto; }
+
 .project-details-main-info {
   margin-bottom: 30px; }
 

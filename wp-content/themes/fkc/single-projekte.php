@@ -95,9 +95,7 @@ $project_category 			= wp_get_post_categories($project_id);
 					<p class="vh6"><?php echo $facts_main; ?></p>
 				</div><!-- /.grid-item -->
 				
-				<div class="grid-item project-details-whitespace"></div>
-				
-				<div id="blue" class="grid-item"></div>
+				<div class="grid-item project-details-whitespace is-displayed-lg"></div>
 				
 				<?php if( have_rows('additional_content') ): ?>
 					<?php while ( have_rows('additional_content') ) : the_row();
@@ -121,19 +119,107 @@ $project_category 			= wp_get_post_categories($project_id);
 					<?php endwhile; ?>
 				
 				<?php endif; ?>
-
-<div class="grid-item"><img src="<?php get_stylesheet_directory(); ?>/wp-content/themes/fkc/assets/img/beispielbilder/burdeny-4.jpg"></div>
-					
-				
-				<div id="purple" class="grid-item"></div>
-				<div id="green" class="grid-item"></div>
-				<div id="yellow" class="grid-item"></div>
-				<div id="brown" class="grid-item"></div>
-				<div id="pink" class="grid-item"></div>
 		
 				
 			</div><!-- /.grid-->
 		</div><!-- /.row -->
+		
+		<?php if ( have_rows('more_projects_this_customer') ) : ?>
+			<?php while ( have_rows('more_projects_this_customer') ) : the_row(); ?>
+			
+				<?php $more_subheader = get_sub_field('more_subheader');
+				if( !empty($more_subheader) ) : ?>
+					<div class="row">
+						<div class="col-xs-8 col-lg-10 col-lg-offset-1">
+							<p class="vh2"><?php echo $more_subheader; ?></p>
+						</div><!-- /.col -->
+					</div><!-- /.row -->	
+				<?php endif; ?>
+			
+				<?php if ( have_rows('more_slider') ) : ?>
+					<div class="row">
+						<div class="col-xs-12">
+							<div class="slider">
+								
+								<?php while( have_rows('more_slider') ) : the_row();
+								$more_slider_pic = get_sub_field('more_slider_pic'); ?>
+								
+									<?php if ( !empty($more_slider_pic) ) : ?>
+										<div class="slider-item">
+											<a href="#0">
+												<img src="<?php echo $more_slider_pic['url']; ?>" alt="<?php echo $more_slider_pic['alt']; ?>">
+											</a>
+										</div><!-- /.slider-item -->
+									<?php endif; ?>
+					
+								<?php endwhile; ?>
+							</div><!-- /.slider -->
+						</div><!-- /.col -->
+					</div><!-- /.row -->
+				<?php endif; ?> 
+				
+				<div class="row">
+					<div class="grid">
+										
+						<!-- Empty div required by the Masonry plugin -->
+						<div class="grid-sizer"></div>
+				
+						<?php 
+						$more_description_main = get_sub_field('more_description_main');
+						$more_facts_main = get_sub_field('more_facts_main');
+						if ( !empty($more_description_main) || !empty($more_facts_main) ) : ?>
+						
+							<div class="grid-item grid-item--size2">
+								<?php if ( !empty($more_description_main) ) : ?>
+									<p class="vh5"><?php echo $more_description_main; ?></p>
+								<?php endif; ?>
+								<?php if ( !empty($more_facts_main) ) : ?>
+									<p class="vh6"><?php echo $more_facts_main; ?></p>
+								<?php endif; ?>
+							</div><!-- /.grid-item -->
+							
+							<div class="grid-item project-details-whitespace is-displayed-lg"></div>
+							
+						<?php endif; ?>
+						
+						
+						
+						<?php if( have_rows('more_additional_content') ): ?>
+							<?php while ( have_rows('more_additional_content') ) : the_row();
+								$more_kind_of_content = get_sub_field('more_kind_of_content'); ?>
+								
+								<?php if ( $more_kind_of_content == 'text') :
+									$more_additional_text = get_sub_field('more_additional_text'); ?>
+									<div class="grid-item grid-item--size2">
+										<p class="vh5"><?php echo $more_additional_text; ?></p>
+									</div><!-- /.grid-item -->
+									
+								<?php elseif ( $more_kind_of_content == 'pic' ) :
+									$more_additional_image = get_sub_field('more_additional_image');
+									$more_small_screen_layout = get_sub_field('more_small_screen_layout'); 
+									$additional_layout_class = '';
+									if($more_small_screen_layout == 'span2') { $additional_layout_class = 'grid-item--size2'; }?>
+												
+									<div class="grid-item <?php echo $additional_layout_class; ?>">
+										<img src="<?php echo $more_additional_image['url']; ?>" alt="<?php echo $more_additional_image['alt']; ?>">
+									</div><!-- /.grid-item -->
+								<?php endif; ?>		
+						
+							<?php endwhile; ?>
+				
+						<?php endif; ?>
+
+					</div><!-- /.grid -->
+				</div><!-- /.row -->
+
+			<?php endwhile; ?>
+		<?php endif; ?>	
+		
+					
+				
+				
+				
+		
 	</div><!-- /.container -->
 
 			
