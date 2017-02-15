@@ -22,7 +22,7 @@ $programmer_email 	= get_field('programmer_email');
 		
 <!-- CONTENT
 ===================================================== -->
-<div id="contentmain"></div>
+<div id="contentmain">
 
 
 	
