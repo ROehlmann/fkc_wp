@@ -466,7 +466,7 @@ a:hover, a:active, a:focus, a:visited {
 /* Gallery-Item Subclass "gallery-item-archiv" */
 .gallery-item.gallery-item-archiv {
   padding-top: 30px;
-  padding-bottom: 30px; }
+  padding-bottom: 5px; }
 
 .gallery-item.gallery-item-archiv img {
   opacity: 1;
@@ -502,6 +502,15 @@ a:hover, a:active, a:focus, a:visited {
 .gallery-item.gallery-item-archiv:hover figcaption > p {
   visibility: visible;
   opacity: 1; }
+
+.image-counter-circles {
+  color: #1D1C1B;
+  font-size: 20px;
+  padding-bottom: 25px;
+  text-align: center; }
+
+.image-counter-circles > .dot-gray {
+  color: #9B9B9B; }
 
 /* Nav-Categories (the small navigation element showing only the categories in large-screen mode */
 .navbar-left {
@@ -619,10 +628,6 @@ a:hover, a:active, a:focus, a:visited {
 .slider-button-next {
   right: -40px; }
 
-/* Lightbox Module */
-.lightboxOverlay {
-  background-color: white; }
-
 /* Projects-all Module */
 /* Weiter generalisieren und wiederverwende, wenn andere Sections ähnlich aufgebaut sind */
 .projects-all-list {
@@ -738,33 +743,33 @@ a:hover, a:active, a:focus, a:visited {
 @media screen and (min-width: 1200px) {
   .grid-item.grid-item--size2 {
     width: 50%; } }
-#red {
-  background-color: red;
-  height: 300px; }
+/* EXPANDING ON LIGHTBOX2 */
+.lightboxOverlay {
+  background-color: white; }
 
-#blue {
-  background-color: blue;
-  height: 500px; }
+.lb-outerContainer::before {
+  content: "schließen";
+  position: absolute;
+  top: -10px;
+  right: 4px;
+  cursor: pointer; }
 
-#green {
-  background-color: green;
-  height: 200px; }
+.lb-data .lb-details {
+  width: 100%;
+  position: relative; }
 
-#yellow {
-  background-color: yellow;
-  height: 500px; }
+.lb-data .lb-close {
+  display: none; }
 
-#purple {
-  background-color: purple;
-  height: 700px; }
+.lb-data .lb-number,
+.lb-data .lb-caption {
+  color: #1D1C1B; }
 
-#brown {
-  background-color: brown;
-  height: 300px; }
-
-#pink {
-  background-color: pink;
-  height: 200px; }
+.lb-data .lb-number {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0; }
 
 /* ==========================================================================
    State styles

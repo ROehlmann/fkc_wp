@@ -105,6 +105,7 @@ $font-base-bold: "BrownPro-Bold";
 $color-white:  #FFFFFF;
 $color-black:  #1D1C1B;
 $color-gray:   #D8D8D8;
+$color-darkgray: #9B9B9B;
 $color-yellow: #F8E81C;
 
 
@@ -661,7 +662,7 @@ a:hover, a:active, a:focus, a:visited {
 /* Gallery-Item Subclass "gallery-item-archiv" */
 .gallery-item.gallery-item-archiv {
 	padding-top: 30px;
-	padding-bottom: 30px; 
+	padding-bottom: 5px; 
 }
 
 
@@ -708,6 +709,17 @@ a:hover, a:active, a:focus, a:visited {
 	visibility: visible;
 	opacity: 1;
 }
+
+.image-counter-circles {
+	color: $color-black;
+	font-size: 20px;
+	padding-bottom: 25px;
+	text-align: center;
+}
+.image-counter-circles > .dot-gray {
+	color: $color-darkgray
+}
+
 
 
 /* Nav-Categories (the small navigation element showing only the categories in large-screen mode */
@@ -855,11 +867,6 @@ a:hover, a:active, a:focus, a:visited {
 }
 .slider-button-next {
 	right: -40px;
-}
-
-/* Lightbox Module */
-.lightboxOverlay {
-	background-color: white;	
 }
 
 
@@ -1018,35 +1025,41 @@ a:hover, a:active, a:focus, a:visited {
 	}
 }
 
-#red {
-	background-color: red;
-	height: 300px;
-}
-#blue {
-	background-color: blue;
-	height: 500px;
-}
-#green {
-	background-color: green;
-	height: 200px;
-}
-#yellow {
-	background-color: yellow;
-	height: 500px;
-}
-#purple {
-	background-color: purple;
-	height: 700px;
-}
-#brown {
-	background-color: brown;
-	height: 300px;
-}
-#pink {
-	background-color: pink;
-	height: 200px;
+
+/* EXPANDING ON LIGHTBOX2 */
+
+.lightboxOverlay {
+	background-color: white;
 }
 
+.lb-outerContainer::before {
+	content: "schließen";
+	position: absolute;
+	top: -10px;
+	right: 4px;
+	cursor: pointer;	
+}
+
+.lb-data .lb-details {
+	width: 100%;
+	position: relative;	
+}
+	
+.lb-data .lb-close {
+  display: none;
+}
+
+.lb-data .lb-number,
+.lb-data .lb-caption {
+	color: $color-black;
+}
+
+.lb-data .lb-number {
+	position: absolute;
+	top: 0;
+	right: 0;
+	padding: 0;
+}
 
 
 	
