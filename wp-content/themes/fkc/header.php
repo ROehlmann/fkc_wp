@@ -86,7 +86,7 @@
 					<img class="logo" src="<?php bloginfo('stylesheet_directory'); ?>/assets/img/fernkopie-logo.jpg" alt="Fernkopie Logo" title="Fernkopie Logo">
 				</a>
 				<nav class="nav-categories l-pull-left is-displayed-md">
-					<p class=" start-grand">
+					<p class="vh6">
 						Wir gestalten 
 						<a class="nav-item-identitaeten" href="<?php echo esc_url( $link_vis_ident ); ?>">visuelle Identitäten</a>,
 						<a class="nav-item-informationsmedien" href="<?php echo esc_url( $link_info_med ); ?>">Informationsmedien</a> und 

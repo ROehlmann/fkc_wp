@@ -110,6 +110,13 @@ jQuery(document).ready(function(){
 			}
 			else {
 				howFarRight = ( cM + cP );
+				// to account for the .col-lg-offset-1 we need to add the offset-factor multiplied with the container size, here as hard coded values for reasons of simplicity
+				if ( sW >= 1200 && sW < 1600 ) {
+					howFarRight = ( howFarRight + 97.5 );
+				}
+				else if ( sW >= 1600 ) {
+					howFarRight = ( howFarRight + 120 );
+				}
 			}
 			
 			$('.start-grand').css('left', howFarRight);
@@ -142,20 +149,27 @@ jQuery(document).ready(function(){
 	var scrollPositionBreakPoint = 2;
 	
 	// After page load:
-		setLeftForStartGrand(screenWidth, scrollPosition, scrollPositionBreakPoint, containerPadding, logoWidth);
-		setStateForStartGrand(scrollPosition, scrollPositionBreakPoint);
+		if ( $('body').hasClass('page-template-page-home') ) {
+			$('.nav-categories').find('p').removeClass('vh6').addClass('start-grand');
+			setLeftForStartGrand(screenWidth, scrollPosition, scrollPositionBreakPoint, containerPadding, logoWidth);
+			setStateForStartGrand(scrollPosition, scrollPositionBreakPoint);
+		}
 		
 	// When resizing the browser window
 		$(window).resize(function() {
 			screenWidth = $(window).width();
-			setLeftForStartGrand(screenWidth, scrollPosition, scrollPositionBreakPoint, containerPadding, logoWidth);
+			if ( $('body').hasClass('page-template-page-home') ) {	
+				setLeftForStartGrand(screenWidth, scrollPosition, scrollPositionBreakPoint, containerPadding, logoWidth);
+			}
 		});
 		
 	// When scrolling
 		$(window).scroll(function() {
 			scrollPosition = $(window).scrollTop();
-			setLeftForStartGrand(screenWidth, scrollPosition, scrollPositionBreakPoint, containerPadding, logoWidth);
-			setStateForStartGrand(scrollPosition, scrollPositionBreakPoint);
+			if ( $('body').hasClass('page-template-page-home') ) {
+				setLeftForStartGrand(screenWidth, scrollPosition, scrollPositionBreakPoint, containerPadding, logoWidth);
+				setStateForStartGrand(scrollPosition, scrollPositionBreakPoint);
+			}
 		});
 	
 
