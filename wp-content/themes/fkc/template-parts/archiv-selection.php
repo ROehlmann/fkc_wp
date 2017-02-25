@@ -47,14 +47,15 @@ if ( $slug_this_page == 'editorial' ) {
 		
 <div class="container archiv-selection category-page">
 	
-	<div class="row">
-		<a class="is-hidden-lg" href="#"><img class="logo l-center-img" src="<?php bloginfo('stylesheet_directory'); ?>/assets/img/fernkopie-logo.jpg" alt="Fernkopie Logo" title="Fernkopie Logo"></a>
+	<div class="row is-hidden-lg">
+		<div class="col-xs-12">
+			<a href="#"><img class="logo l-center-img" src="<?php bloginfo('stylesheet_directory'); ?>/assets/img/fernkopie-logo.jpg" alt="Fernkopie Logo" title="Fernkopie Logo"></a>
+		</div><!-- /.col -->
 	</div><!-- /.row -->
 	
 	<div class="row">
 		
 		<?php if ( $slug_this_page != 'editorial' ) : ?>
-			<div class="row">
 				<div class="col-xs-4 archiv-selection-col <?php echo $additional_class_editorial; ?>">
 					<img class="logo l-center-img is-displayed-lg" src="<?php bloginfo('stylesheet_directory'); ?>/assets/img/fernkopie-logo.jpg" alt="Fernkopie Logo" title="Fernkopie Logo">
 					<a href="<?php echo esc_url( $link_editorial ); ?>">
