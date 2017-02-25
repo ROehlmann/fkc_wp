@@ -1,8 +1,15 @@
 jQuery(document).ready(function(){
 	
+	var initialScrollPosition = $(window).scrollTop();
+	var scrollPosition = initialScrollPosition;
+	
 	var initialScreenWidth = $(window).width();
 	var screenWidth = initialScreenWidth;
+	
 	var minWidthDesktop = 992;
+
+	
+	
 	
 	/* Indicate in Navigation which page we are on */
 	if ( $('body').hasClass('post-type-archive-projekte') ) {
@@ -57,6 +64,115 @@ jQuery(document).ready(function(){
 	    /* Dropdown: Bind dropdown handler to click event on ".dropdown-unless-desktop" items */
 		$dropdownParent.on("click", dropdown);
     }
+	
+	
+	
+	/* Positioning the .start-grand element
+	======================================== */
+
+	/* Helper-Function: Calculate the margin of the .container element for the positioning of
+	   the .start-grand element */
+	   
+	   // Parameters: ScreenWidth (sW)
+	   // Returns: Margin of the .container element (num)
+	   function getContainerMargin(sW) {
+			if ( sW < 992 ) {
+				return 0;
+			}
+			else if ( sW >= 992 && sW < 1200 ) {
+				return ( ( sW - 970) / 2 );
+			} 
+			else if ( sW >= 1200 && sW < 1600 ) {
+				return ( ( sW - 1170) / 2 );
+			}
+			else if ( sW >= 1600 ) {
+				return ( ( sW - 1440) / 2 );
+			}
+		}
+
+
+	/* Positioning-Function: Sets the "left" property of the .start-grand element to the correct value */
+	
+		/* 	Parameters: screenWidth (sW),
+						scrollPosition (sP),
+						scrollPositionBreakPoint (sPBP),
+						containerPadding (cP),
+						logoWidth (lW)
+			Returns:	true
+		*/
+		
+		function setLeftForStartGrand(sW, sP, sPBP, cP, lW) {
+			var howFarRight = 0;
+			var cM = getContainerMargin(sW);
+			
+			if ( sP > sPBP ) {
+				howFarRight = ( cM + cP + lW );
+			}
+			else {
+				howFarRight = ( cM + cP );
+			}
+			
+			$('.start-grand').css('left', howFarRight);
+			return true;
+		}
+		
+		
+	/* Set-State-Function: Sets the state of the .start-grand element to grand or small 
+		by adding a class depending on the scroll-position */
+		
+		/* 	Parameters: scrollPosition (sP),
+						scrollPositionBreakPoint (sPBP)
+			Returns: true
+		*/
+		
+		function setStateForStartGrand(sP, sPBP) {
+			if( sP > sPBP ) {
+				$('.start-grand').addClass('is-now-small');
+				return true;
+			} else {
+				$('.start-grand').removeClass('is-now-small');
+				return true;
+			}
+		}
+		
+		
+	/* Calling the Positioning-Function and the Set-State-Function in the necessary contexts */
+	var containerPadding = 15;
+	var logoWidth = 170;
+	var scrollPositionBreakPoint = 2;
+	
+	// After page load:
+		setLeftForStartGrand(screenWidth, scrollPosition, scrollPositionBreakPoint, containerPadding, logoWidth);
+		setStateForStartGrand(scrollPosition, scrollPositionBreakPoint);
+		
+	// When resizing the browser window
+		$(window).resize(function() {
+			screenWidth = $(window).width();
+			setLeftForStartGrand(screenWidth, scrollPosition, scrollPositionBreakPoint, containerPadding, logoWidth);
+		});
+		
+	// When scrolling
+		$(window).scroll(function() {
+			scrollPosition = $(window).scrollTop();
+			setLeftForStartGrand(screenWidth, scrollPosition, scrollPositionBreakPoint, containerPadding, logoWidth);
+			setStateForStartGrand(scrollPosition, scrollPositionBreakPoint);
+		});
+	
+
+	    	
+	
+
+	
+
+	
+
+	
+	
+	
+
+	
+		
+		
 	
 	/* Initialize Masonry Layout */
 	$('.grid').masonry({
@@ -133,6 +249,7 @@ jQuery(document).ready(function(){
 	  		scrollTop: offsetTop
 		}, 300);
   	});
+
 
 	
 });

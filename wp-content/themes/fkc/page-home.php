@@ -26,7 +26,7 @@ get_header(); ?>
 
 <!-- CONTENT
 ===================================================== -->
-<div id="contentmain">
+<div id="contentmain" class="contentmain-home">
 
 	<!-- Leistungsspektrum
     ===================================================== -->
