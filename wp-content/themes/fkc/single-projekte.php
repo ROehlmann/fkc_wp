@@ -153,8 +153,9 @@ $project_category 			= wp_get_post_categories($project_id);
 											<div class="grid-sizer"></div>
 								
 								<?php endif; ?>
-							
-							<?php endif; ?>		
+								<!-- ENDE ADDTIONAL CONTENT: SLIDER -->
+								
+							<?php endif; ?>	
 						
 					<?php endwhile; ?>
 				
@@ -243,6 +244,48 @@ $project_category 			= wp_get_post_categories($project_id);
 									<div class="grid-item <?php echo $additional_layout_class; ?>">
 										<img src="<?php echo $more_additional_image['url']; ?>" alt="<?php echo $more_additional_image['alt']; ?>">
 									</div><!-- /.grid-item -->
+									
+									
+								<!-- ADDTIONAL CONTENT: SLIDER -->	
+								<?php elseif ( $more_kind_of_content == 'slider' ) : ?>
+									<?php if( have_rows('additional_slider_extra_projects') ): ?>
+										<!-- closing the masonry-grid for the slider -->
+											</div><!-- /.grid-->
+										</div><!-- /.row -->
+										
+										<!-- opening a standard bootstrap 1-colum row for the slider -->
+										<div class="row">
+											<div class="col-xs-12">
+										
+											<div class="slider">
+												<?php while ( have_rows('additional_slider_extra_projects') ) : the_row(); 
+													$slider_pic = get_sub_field('slider_pic'); ?>
+													
+													<?php if ( !empty($slider_pic) ) : ?>
+														<div class="slider-item">
+															<a href="#0">
+																<img src="<?php echo $slider_pic['url']; ?>" alt="<?php echo $slider_pic['alt']; ?>">
+															</a>
+														</div><!-- /.slider-item -->
+													<?php endif; ?>
+												
+												<?php endwhile; ?>
+											</div><!-- /.slider -->
+											
+										<!-- closing the standard bootstrap 1-column row after the slider -->
+											</div><!-- /.col-xs-12 -->
+										</div><!-- /.row -->
+											
+										<!-- reopening a masonry-grid after the slider-->
+										<div class="row">
+											<div class="grid">
+												<!-- Empty div required by the Masonry plugin -->
+												<div class="grid-sizer"></div>
+									
+									<?php endif; ?>
+									<!-- ENDE ADDTIONAL CONTENT: SLIDER -->	
+							
+							
 								<?php endif; ?>		
 						
 							<?php endwhile; ?>
