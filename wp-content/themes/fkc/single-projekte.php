@@ -149,6 +149,8 @@ $project_category 			= wp_get_post_categories($project_id);
 									<!-- reopening a masonry-grid after the slider-->
 									<div class="row">
 										<div class="grid">
+											<!-- Empty div required by the Masonry plugin -->
+											<div class="grid-sizer"></div>
 								
 								<?php endif; ?>
 							
