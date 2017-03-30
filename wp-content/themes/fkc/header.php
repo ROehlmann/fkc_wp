@@ -83,7 +83,7 @@
 			<!-- NAVBAR BRAND -->
 			<div class="navbar-left l-pull-left">
 				<a class="l-pull-left" href="<?php echo get_home_url(); ?>">
-					<img class="logo" src="<?php bloginfo('stylesheet_directory'); ?>/assets/img/fernkopie-logo.jpg" alt="Fernkopie Logo" title="Fernkopie Logo">
+					<img class="logo" src="<?php bloginfo('stylesheet_directory'); ?>/assets/img/fernkopie-logo.png" alt="Fernkopie Logo" title="Fernkopie Logo">
 				</a>
 				<nav class="nav-categories l-pull-left is-displayed-md">
 					<p class="vh6">
