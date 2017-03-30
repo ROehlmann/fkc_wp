@@ -82,7 +82,7 @@ $project_category 			= wp_get_post_categories($project_id);
 			
 			
 			
-
+	
 	<div class="container">
 		<div class="row">
 			<div class="grid">
@@ -114,6 +114,44 @@ $project_category 			= wp_get_post_categories($project_id);
 								<div class="grid-item <?php echo $additional_layout_class; ?>">
 									<img src="<?php echo $additional_image['url']; ?>" alt="<?php echo $additional_image['alt']; ?>">
 								</div><!-- /.grid-item -->
+							
+							<!-- ADDTIONAL CONTENT: SLIDER -->	
+							<?php elseif ( $kind_of_content == 'slider' ):
+								
+								if( have_rows('additional_slider_first_project') ): ?>
+									<!-- closing the masonry-grid for the slider -->
+										</div><!-- /.grid-->
+									</div><!-- /.row -->
+									
+									<!-- opening a standard bootstrap 1-colum row for the slider -->
+									<div class="row">
+										<div class="col-xs-12">
+									
+										<div class="slider">
+											<?php while ( have_rows('additional_slider_first_project') ) : the_row(); 
+												$slider_pic = get_sub_field('slider_pic'); ?>
+												
+												<?php if ( !empty($slider_pic) ) : ?>
+													<div class="slider-item">
+														<a href="#0">
+															<img src="<?php echo $slider_pic['url']; ?>" alt="<?php echo $slider_pic['alt']; ?>">
+														</a>
+													</div><!-- /.slider-item -->
+												<?php endif; ?>
+											
+											<?php endwhile; ?>
+										</div><!-- /.slider -->
+										
+									<!-- closing the standard bootstrap 1-column row after the slider -->
+										</div><!-- /.col-xs-12 -->
+									</div><!-- /.row -->
+										
+									<!-- reopening a masonry-grid after the slider-->
+									<div class="row">
+										<div class="grid">
+								
+								<?php endif; ?>
+							
 							<?php endif; ?>		
 						
 					<?php endwhile; ?>
