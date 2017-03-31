@@ -748,6 +748,11 @@ a:hover, a:active, a:focus, a:visited {
 @media screen and (min-width: 1200px) {
   .grid-item.grid-item--size2 {
     width: 50%; } }
+/* ePublishing Page*/
+.epublishing-content-row {
+  margin-top: 50px;
+  margin-bottom: 50px; }
+
 /* EXPANDING ON LIGHTBOX2 */
 .lightboxOverlay {
   background-color: white; }

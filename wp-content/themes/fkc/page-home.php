@@ -174,7 +174,10 @@ dass die besten Lösungen an der Schnittstelle von inhaltlicher Auseinandersetzu
 						<p class="l-center-text vh2">Wir erstellen aus Ihren Printprodukten interaktive Erlebnisse für Tablets. Dabei werden vorhandene ­InDesign-Dateien überarbeitet und um neue Dimensionen erweitert, wie z. B. 360°-Ansichten, Hyperlinks, ­Diashows, Audio- und Video-Dateien. Als Ergebnis erhalten Sie eine App für mobile Endgeräte.</p>
 					</div><!-- /.e-publishing-text-->
 					
-					<p class="l-center-text vh6"><a class="l-bold" href="#0">mehr erfahren →</a></p>
+					<?php // get the link to the ePublishing page
+						$epublishing_page_object = get_page_by_title( 'ePublishing' );
+						$epublishing_page_link = get_page_link($epublishing_page_object->ID); ?>
+					<p class="l-center-text vh6"><a class="l-bold" href="<?php echo $epublishing_page_link; ?>">mehr erfahren →</a></p>
 				</div><!-- /.col -->
 			</div><!-- /.row -->
 				
