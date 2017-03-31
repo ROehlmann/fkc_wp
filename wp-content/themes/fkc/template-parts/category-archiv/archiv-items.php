@@ -19,15 +19,15 @@
 		$num_images = 1; ?>
 	    
 	    <div class="row">
-		    <div class="col-xs-6 col-lg-3">
 		    
-			    <?php while( $query_featured_projects->have_posts() ) : $query_featured_projects->the_post(); 
-				    $featured_image = get_field('featured_image');    
-					$featured_customer = get_field('featured_customer');
-					$featured_project = get_field('featured_project');
-					$featured_year = get_field('featured_year'); 
-			    ?>
-		    		
+		    <?php while( $query_featured_projects->have_posts() ) : $query_featured_projects->the_post(); 
+			    $featured_image = get_field('featured_image');    
+				$featured_customer = get_field('featured_customer');
+				$featured_project = get_field('featured_project');
+				$featured_year = get_field('featured_year'); 
+		    ?>
+	    		
+	    		<div class="col-xs-6 col-lg-3">
 					<a href="<?php echo $featured_image['url'];?>" data-lightbox="archiv-lightbox"
 						data-title="<span class='lb-customer l-bold'><?php echo $featured_customer; ?></span>
 							 			<br>
@@ -99,11 +99,10 @@
 						</div><!-- /.number-of-images -->
 					
 					<?php endif; ?>
-						
+				</div><!-- /.col -->				
 				    
-			    <?php endwhile; ?>
+		    <?php endwhile; ?>
 		    
-		    </div><!-- /.col -->
 	    </div><!-- /.row -->
 		 
 	<?php endif; ?>
