@@ -57,7 +57,7 @@ $project_category 			= wp_get_post_categories($project_id);
 		// check if the repeater field has rows of data
 		if( have_rows('slider') ): ?>
 			<div class="row">
-				<div class="col-xs-12">
+				<div class="col-xs-10 col-xs-offset-1">
 					<div class="slider">
 						
 						<?php // loop through the rows of data
@@ -125,7 +125,7 @@ $project_category 			= wp_get_post_categories($project_id);
 									
 									<!-- opening a standard bootstrap 1-colum row for the slider -->
 									<div class="row">
-										<div class="col-xs-12">
+										<div class="col-xs-10 col-xs-offset-1">
 									
 										<div class="slider">
 											<?php while ( have_rows('additional_slider_first_project') ) : the_row(); 
@@ -143,7 +143,7 @@ $project_category 			= wp_get_post_categories($project_id);
 										</div><!-- /.slider -->
 										
 									<!-- closing the standard bootstrap 1-column row after the slider -->
-										</div><!-- /.col-xs-12 -->
+										</div><!-- /.col-xs-10.col-xs-offset-1 -->
 									</div><!-- /.row -->
 										
 									<!-- reopening a masonry-grid after the slider-->
@@ -179,7 +179,7 @@ $project_category 			= wp_get_post_categories($project_id);
 			
 				<?php if ( have_rows('more_slider') ) : ?>
 					<div class="row">
-						<div class="col-xs-12">
+						<div class="col-xs-10 col-xs-offset-1">
 							<div class="slider">
 								
 								<?php while( have_rows('more_slider') ) : the_row();
@@ -255,7 +255,7 @@ $project_category 			= wp_get_post_categories($project_id);
 										
 										<!-- opening a standard bootstrap 1-colum row for the slider -->
 										<div class="row">
-											<div class="col-xs-12">
+											<div class="col-xs-10 col-xs-offset-1">
 										
 											<div class="slider">
 												<?php while ( have_rows('additional_slider_extra_projects') ) : the_row(); 
@@ -273,7 +273,7 @@ $project_category 			= wp_get_post_categories($project_id);
 											</div><!-- /.slider -->
 											
 										<!-- closing the standard bootstrap 1-column row after the slider -->
-											</div><!-- /.col-xs-12 -->
+											</div><!-- /.col-xs-10.col-xs-offset-1 -->
 										</div><!-- /.row -->
 											
 										<!-- reopening a masonry-grid after the slider-->
