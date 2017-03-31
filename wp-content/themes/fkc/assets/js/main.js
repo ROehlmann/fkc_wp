@@ -36,7 +36,8 @@ jQuery(document).ready(function(){
 	} else if ( $('body').hasClass('category-briefmarken') ) {
 		// $('.nav-item-archiv').addClass('is-active');
 		$('.nav-item-briefmarken').addClass('is-active');
-	}
+	} else if ( $('body').hasClass('page-template-page-epublishing') ) {
+		$('.nav-item-epublish').addClass('is-active'); }
 
 
 	

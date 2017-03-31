@@ -40,8 +40,14 @@
     $category_id = get_cat_ID( 'Briefmarken' );
     // Get the URL of this category
     $link_briefmarken = get_category_link( $category_id );  
+    
+    // Get the link to the ePublishing page
+    $epublishing_page_object = get_page_by_title( 'ePublishing' );
+	$epublishing_page_link = get_page_link($epublishing_page_object->ID);
 
-?><!DOCTYPE html>
+?>
+
+<!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>">
@@ -137,10 +143,8 @@
 					</a>
 				</li>
 				
-				<!-- Für den Moment versteckt, bis die Inhalte stehen. Zum wieder
-					 Sichtbar machen einfach "is-hidden" durch "is-hidden-md" ersetzen -->
-				<li class="is-hidden">
-					<a class="nav-item-epublish"href="#0">
+				<li class="is-hidden-md">
+					<a class="nav-item-epublish" href="<?php echo $epublishing_page_link; ?>">
 						ePublish
 					</a>
 				</li>
