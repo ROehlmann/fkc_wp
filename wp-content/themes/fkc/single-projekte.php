@@ -335,14 +335,14 @@ $project_category 			= wp_get_post_categories($project_id);
 		    		
 					<?php // The Loop
 				    while ( $similar_projects->have_posts() ) : $similar_projects->the_post();
-				    	$feature_image		= get_field('feature_image');
-				    	$customer			= get_field('customer');
-				    	$project_title		= get_field('project_title'); ?>
+				    	$pic_for_similar_projects_section		= get_field('pic_for_similar_projects_section');
+				    	$customer								= get_field('customer');
+				    	$project_title							= get_field('project_title'); ?>
 				    	
 				    	<div class="col-xs-6 col-lg-4">
 							<figure class="gallery-item">
 								<a href="<?php echo get_permalink();?>" >
-									<img src="<?php echo $feature_image['url']; ?>" alt="<?php echo $feature_image['alt']; ?>" >
+									<img src="<?php echo $pic_for_similar_projects_section['url']; ?>" alt="<?php echo $pic_for_similar_projects_section['alt']; ?>" >
 									<figcaption>
 										<h3 class="l-bold vh6"><?php echo $customer; ?></h3>
 										<p class="vh6"><?php echo $project_title; ?></p>
