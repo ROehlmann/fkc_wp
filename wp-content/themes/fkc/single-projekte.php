@@ -234,9 +234,15 @@ $project_category 			= wp_get_post_categories($project_id);
 								$more_kind_of_content = get_sub_field('more_kind_of_content'); ?>
 								
 								<?php if ( $more_kind_of_content == 'text') :
-									$more_additional_text = get_sub_field('more_additional_text'); ?>
+									$more_additional_text = get_sub_field('more_additional_text');
+									$text_indented = get_sub_field('text_indented');
+									$indentation_class = "";
+									if ($text_indented == true ) { $indentation_class = "indented-1-col"; } ?>
+									
 									<div class="grid-item grid-item--size2">
-										<p class="vh5"><?php echo $more_additional_text; ?></p>
+										<p class="vh5 <?php echo $indentation_class; ?>">
+											<?php echo $more_additional_text; ?>
+										</p>
 									</div><!-- /.grid-item -->
 									
 								<?php elseif ( $more_kind_of_content == 'pic' ) :
