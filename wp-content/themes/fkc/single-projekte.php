@@ -101,9 +101,13 @@ $project_category 			= wp_get_post_categories($project_id);
 					<?php while ( have_rows('additional_content') ) : the_row();
 						$kind_of_content = get_sub_field('kind_of_content'); ?>
 							<?php if ( $kind_of_content == 'text') :
-								$additional_text = get_sub_field('additional_text'); ?>
+								$additional_text = get_sub_field('additional_text');
+								$text_indented = get_sub_field('text_indented');
+								$indentation_class = "";
+								if ($text_indented == true ) { $indentation_class = "indented-1-col"; } ?>
+								
 								<div class="grid-item grid-item--size2">
-									<p class="vh5"><?php echo $additional_text; ?></p>
+									<p class="vh5 <?php echo $indentation_class; ?>"><?php echo $additional_text; ?></p>
 								</div><!-- /.grid-item -->
 							<?php elseif ( $kind_of_content == 'pic' ) :
 								$additional_image = get_sub_field('additional_image');
@@ -339,7 +343,7 @@ $project_category 			= wp_get_post_categories($project_id);
 				    	$customer								= get_field('customer');
 				    	$project_title							= get_field('project_title'); ?>
 				    	
-				    	<div class="col-xs-6 col-lg-4">
+				    	<div class="col-xs-6 col-lg-4 similar-project">
 							<figure class="gallery-item">
 								<a href="<?php echo get_permalink();?>" >
 									<img src="<?php echo $pic_for_similar_projects_section['url']; ?>" alt="<?php echo $pic_for_similar_projects_section['alt']; ?>" >

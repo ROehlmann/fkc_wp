@@ -21,6 +21,7 @@
 	    <?php if( $page_name == 'info' ) : ?>
 	    	<?php $id_impressum = get_page_by_title( 'impressum' );
 		    	  $url_impressum = get_permalink($id_impressum); ?>
+		    <p class="l-pull-left"><a class="vh7 l-bold" href="#0">→ instagram</a></p>	  
 	    	<p class="l-pull-left"><a class="vh7 l-bold" href="<?php echo $url_impressum; ?>">Impressum</a></p>
 	    
 	    <?php else : ?>
@@ -30,7 +31,7 @@
 	    <p class="l-pull-right"><a class="vh7 l-bold btn-scroll-top" href="#">nach oben</a></p>
     </div><!-- /.container -->
 </footer>
-
+ 
 
 
 <!-- SCRIPTS

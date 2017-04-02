@@ -369,6 +369,10 @@ a:hover, a:active, a:focus, a:visited {
 	}
 }
 
+#footermain .l-pull-left:first-child {
+	margin-right: 50px;
+}
+
 /* DUPLICATION! #projectsheader und #content-section-header mergen! */
 #projectsheader {
 	margin-bottom: 15px;
@@ -419,9 +423,16 @@ a:hover, a:active, a:focus, a:visited {
 	margin-top: 60px;
 }
 
+#similar-projects-section .similar-project:last-child {
+	display: none;
+}
+
 @media screen and (min-width: 992px) {
 	#similar-projects-section hr {
 		display: none;
+	}
+	#similar-projects-section .similar-project:last-child {
+		display: block;
 	}
 }
 
@@ -1020,6 +1031,19 @@ a:hover, a:active, a:focus, a:visited {
 	width: auto;
 	height: auto;
 }
+
+.indented-1-col {}
+@media screen and (min-width: 1200px ) {
+	.indented-1-col {
+		padding-left: 97.499999961px; 
+	}
+}
+@media screen and (min-width: 1600px ) {
+	.indented-1-col {
+		padding-left: 119.999999952px; 
+	}
+}
+
 
 // Elemente mit grid-item--size2 gehen im small screen view über die ganze Breite
 .grid-item.grid-item--size2 {

@@ -277,6 +277,9 @@ a:hover, a:active, a:focus, a:visited {
 @media screen and (min-width: 992px) {
   #footermain > .container {
     margin-top: 0; } }
+#footermain .l-pull-left:first-child {
+  margin-right: 50px; }
+
 /* DUPLICATION! #projectsheader und #content-section-header mergen! */
 #projectsheader {
   margin-bottom: 15px; }
@@ -309,9 +312,15 @@ a:hover, a:active, a:focus, a:visited {
 #similar-projects-section {
   margin-top: 60px; }
 
+#similar-projects-section .similar-project:last-child {
+  display: none; }
+
 @media screen and (min-width: 992px) {
   #similar-projects-section hr {
-    display: none; } }
+    display: none; }
+
+  #similar-projects-section .similar-project:last-child {
+    display: block; } }
 /* Team Section */
 #team-section li {
   margin-bottom: 20px; }
@@ -742,6 +751,12 @@ a:hover, a:active, a:focus, a:visited {
   width: auto;
   height: auto; }
 
+@media screen and (min-width: 1200px) {
+  .indented-1-col {
+    padding-left: 97.499999961px; } }
+@media screen and (min-width: 1600px) {
+  .indented-1-col {
+    padding-left: 119.999999952px; } }
 .grid-item.grid-item--size2 {
   width: 100%; }
 
