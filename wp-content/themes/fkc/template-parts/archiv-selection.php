@@ -61,7 +61,7 @@ if ( $slug_this_page == 'editorial' ) {
 					<a href="<?php echo esc_url( $link_editorial ); ?>">
 						<p class="l-center-text l-uppercase vh4">Archiv Editorial</p>
 						<div class="row">
-							<div class="col-lg-4 col-lg-offset-4">
+							<div class="col-sm-6 col-sm-offset-3">
 								<img class="l-center-img" src="<?php bloginfo('stylesheet_directory'); ?>/assets/img/titelbild-archiv-editorial.jpg" alt="">
 							</div><!-- /.col -->
 						</div><!-- /.row -->
@@ -75,7 +75,7 @@ if ( $slug_this_page == 'editorial' ) {
 				<a href="<?php echo esc_url( $link_plakat ); ?>">
 					<p class="l-center-text l-uppercase vh4">Archiv Plakate</p>
 					<div class="row">
-						<div class="col-lg-4 col-lg-offset-4">
+						<div class="col-sm-6 col-sm-offset-3">
 							<img class="l-center-img" src="<?php bloginfo('stylesheet_directory'); ?>/assets/img/titelbild-archiv-plakat.jpg" alt=""> 
 						</div><!-- /.col -->
 					</div><!-- /.row -->
@@ -89,7 +89,7 @@ if ( $slug_this_page == 'editorial' ) {
 				<a href="<?php echo esc_url( $link_briefmarken ); ?>">
 					<p class="l-center-text l-uppercase vh4">Archiv Briefmarken</p>
 					<div class="row">
-						<div class="col-lg-4 col-lg-offset-4">
+						<div class="col-sm-6 col-sm-offset-3">
 							<img class="l-center-img" src="<?php bloginfo('stylesheet_directory'); ?>/assets/img/titelbild-archiv-briefmarken.jpg" alt="">
 						</div><!-- /.col -->
 					</div><!-- /.row -->

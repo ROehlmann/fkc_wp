@@ -112,7 +112,7 @@ a:hover, a:active, a:focus, a:visited {
   letter-spacing: 0;
   margin: 5px 0; }
 
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 768px) {
   .vh1,
   .vh1 > a {
     font-size: 37px;
@@ -131,7 +131,7 @@ a:hover, a:active, a:focus, a:visited {
   letter-spacing: 0;
   margin: 5px 0; }
 
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 768px) {
   .vh2,
   .vh2 > a {
     font-size: 28px;
@@ -150,7 +150,7 @@ a:hover, a:active, a:focus, a:visited {
   letter-spacing: 0;
   margin: 5px 0; }
 
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 768px) {
   .vh3,
   .vh3 > a {
     font-size: 20px;
@@ -169,7 +169,7 @@ a:hover, a:active, a:focus, a:visited {
   letter-spacing: 1px;
   margin: 5px 0; }
 
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 768px) {
   .vh4,
   .vh4 > a {
     font-size: 14px;
@@ -188,7 +188,7 @@ a:hover, a:active, a:focus, a:visited {
   letter-spacing: 0;
   margin: 5px 0; }
 
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 768px) {
   .vh5,
   .vh5 > a {
     font-size: 20px;
@@ -207,7 +207,7 @@ a:hover, a:active, a:focus, a:visited {
   letter-spacing: 0.2px;
   margin: 5px 0; }
 
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 768px) {
   .vh6,
   .vh6 > a {
     font-size: 15px;
@@ -226,7 +226,7 @@ a:hover, a:active, a:focus, a:visited {
   letter-spacing: 0.2px;
   margin: 0; }
 
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 768px) {
   .vh7,
   .vh7 > a {
     font-size: 15px;
@@ -358,8 +358,12 @@ a:hover, a:active, a:focus, a:visited {
   z-index: 99;
   width: 100%;
   padding-top: 30px;
+  padding-bottom: 15px;
   background-color: #FFFFFF; }
 
+@media screen and (min-width: 992px) {
+  #headermain {
+    padding-bottom: 0; } }
 #contentmain {
   padding-top: 100px; }
 
@@ -675,6 +679,9 @@ a:hover, a:active, a:focus, a:visited {
 @media screen and (min-width: 615px) {
   .leistungsspektrum {
     width: 66.66666667%; } }
+@media screen and (min-width: 768px) {
+  .leistungsspektrum {
+    width: 83.33333333%; } }
 .leistungsspektrum a {
   border-bottom: 1px solid #1D1C1B; }
 
