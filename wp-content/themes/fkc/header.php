@@ -65,6 +65,7 @@
 
 <!-- Javascript -->
 <script src="<?php bloginfo('stylesheet_directory'); ?>/assets/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+<script>document.addEventListener("touchstart", function(){}, true);</script>
 
 <?php wp_head(); ?>
 </head>
