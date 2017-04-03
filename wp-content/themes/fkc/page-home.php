@@ -49,9 +49,9 @@ get_header(); ?>
 
 
 
-	<!-- Projekte
+	<!-- Projekte 
     ===================================================== -->
-    <div id="projectsheader" class="container">
+    <div id="selected-projects-home" class="container">
 		
 		<div class="row">
 			<div class="col-xs-8 col-lg-10 col-lg-offset-1">

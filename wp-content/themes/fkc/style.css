@@ -282,11 +282,19 @@ a:hover, a:active, a:focus, a:visited {
 
 /* DUPLICATION! #projectsheader und #content-section-header mergen! */
 #projectsheader {
+  margin-bottom: 5px; }
+
+#selected-projects {
+  margin-bottom: 20px; }
+
+#selected-projects-home {
+  margin-top: 3px;
   margin-bottom: 15px; }
 
-@media screen and (min-width: 1200px) {
-  #projectsheader {
-    margin-bottom: 50px; } }
+@media screen and (min-width: 768px) {
+  #selected-projects-home {
+    margin-top: 8px;
+    margin-bottom: 30px; } }
 #content-section-header {
   margin-bottom: 15px; }
 
@@ -406,6 +414,9 @@ a:hover, a:active, a:focus, a:visited {
 .l-not-bold {
   font-family: "BrownPro-Light"; }
 
+@media screen and (min-width: 768px) {
+  .l-not-bold-sm {
+    font-family: "BrownPro-Light" !important; } }
 @media screen and (min-width: 992px) {
   .l-not-bold-md {
     font-family: "BrownPro-Light" !important; } }
@@ -657,6 +668,10 @@ a:hover, a:active, a:focus, a:visited {
 .slider-button-next {
   right: -40px; }
 
+@media screen and (max-width: 767px) {
+  .slider-button-prev,
+  .slider-button-next {
+    display: none !important; } }
 /* Projects-all Module */
 /* Weiter generalisieren und wiederverwende, wenn andere Sections ähnlich aufgebaut sind */
 .projects-all-list {
@@ -667,6 +682,12 @@ a:hover, a:active, a:focus, a:visited {
 
 .projects-all-list li:last-child > p::after {
   content: ""; }
+
+.projects-all-list a {
+  text-decoration: none; }
+
+.projects-all-list a:hover {
+  border-bottom: 1px solid #1D1C1B; }
 
 @media screen and (min-width: 1200px) {
   .projects-all-list {
@@ -725,8 +746,11 @@ a:hover, a:active, a:focus, a:visited {
   margin-bottom: 60px; }
 
 .archiv-selection.category-page {
-  margin-top: 100px; }
+  margin-top: 50px; }
 
+@media screen and (min-width: 768px) {
+  .archiv-selection.category-page {
+    margin-top: 100px; } }
 .archiv-selection-col {
   border-left: 1px solid #D8D8D8; }
 
@@ -804,7 +828,7 @@ a:hover, a:active, a:focus, a:visited {
 .grid-item.grid-item--size2 {
   width: 100%; }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 768px) {
   .grid-item.grid-item--size2 {
     width: 50%; } }
 /* ePublishing Page*/

@@ -91,7 +91,7 @@ if ( $query_featured_projects->have_posts() ) : ?>
 			    	?>
 			    	
 			    		<li class="l-inline">
-			    			<p class="vh2 l-bold l-inline"><a href="<?php echo get_permalink(); ?>" ><?php echo $customer; ?></a></p>
+			    			<p class="vh2 l-inline"><a href="<?php echo get_permalink(); ?>" ><?php echo $customer; ?></a></p>
 			    		</li>
 				    								
 					<?php endwhile; ?>

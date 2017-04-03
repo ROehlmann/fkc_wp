@@ -33,22 +33,22 @@ get_header(); ?>
 	<div id="projectsheader" class="container">
 		
 		<div class="row">
-			<div class="col-xs-8 col-lg-10 col-lg-offset-1">
-				<h1 class="vh1 l-bold l-not-bold-md">Unsere Projekte</h1>
+			<div class="col-xs-10 col-sm-10 col-sm-offset-1">
+				<h1 class="vh1 l-bold l-not-bold-sm">Unsere Projekte</h1>
 				<p class="vh2">hier wird ein kurzer erklärender Text zu der jeweiligen Kategorie stehen</p>
 			</div><!-- /.col -->
 		</div><!-- /.row -->
 			
-	</div><!-- /.container -->
+	</div><!-- /.container --> 
 
 
 
 	<!-- Projekte
     ===================================================== -->
-    <div id="projectsheader" class="container">
+    <div id="selected-projects" class="container">
 		
 		<div class="row">
-			<div class="col-xs-8 col-lg-10 col-lg-offset-1">
+			<div class="col-xs-10 col-sm-10 col-sm-offset-1">
 				<h2 class="vh6">ausgewählte Projekte</h2>
 			</div><!-- /.col -->
 		</div><!-- /.row -->
@@ -146,7 +146,7 @@ get_header(); ?>
 						    	?>
 						    	
 						    		<li class="l-inline">
-						    			<p class="vh2 l-bold l-inline"><a href="<?php echo get_permalink(); ?>" ><?php echo $customer; ?></a></p>
+						    			<p class="vh2 l-inline"><a href="<?php echo get_permalink(); ?>" ><?php echo $customer; ?></a></p>
 						    		</li>
 							    								
 								<?php endwhile; ?>

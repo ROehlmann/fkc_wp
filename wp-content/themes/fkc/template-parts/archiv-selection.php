@@ -44,10 +44,10 @@ if ( $slug_this_page == 'editorial' ) {
 ?>
 
 
-		
+		 
 <div class="container archiv-selection category-page">
 	
-	<div class="row is-hidden-lg">
+	<div class="row is-hidden-sm">
 		<div class="col-xs-12">
 			<a href="#"><img class="logo logo-centered l-center-img" src="<?php bloginfo('stylesheet_directory'); ?>/assets/img/fernkopie-logo.jpg" alt="Fernkopie Logo" title="Fernkopie Logo"></a>
 		</div><!-- /.col -->
@@ -57,7 +57,7 @@ if ( $slug_this_page == 'editorial' ) {
 		
 		<?php if ( $slug_this_page != 'editorial' ) : ?>
 				<div class="col-xs-4 archiv-selection-col <?php echo $additional_class_editorial; ?>">
-					<img class="logo l-center-img is-displayed-lg" src="<?php bloginfo('stylesheet_directory'); ?>/assets/img/fernkopie-logo.jpg" alt="Fernkopie Logo" title="Fernkopie Logo">
+					<img class="logo l-center-img is-displayed-sm" src="<?php bloginfo('stylesheet_directory'); ?>/assets/img/fernkopie-logo.jpg" alt="Fernkopie Logo" title="Fernkopie Logo">
 					<a href="<?php echo esc_url( $link_editorial ); ?>">
 						<p class="l-center-text l-uppercase vh4">Archiv Editorial</p>
 						<div class="row">
@@ -71,7 +71,7 @@ if ( $slug_this_page == 'editorial' ) {
 				
 		<?php if ( $slug_this_page != 'plakat' ) : ?>
 			<div class="col-xs-4 archiv-selection-col <?php echo $additional_class_plakat; ?>">
-				<img class="logo l-center-img is-displayed-lg" src="<?php bloginfo('stylesheet_directory'); ?>/assets/img/fernkopie-logo.jpg" alt="Fernkopie Logo" title="Fernkopie Logo">
+				<img class="logo l-center-img is-displayed-sm" src="<?php bloginfo('stylesheet_directory'); ?>/assets/img/fernkopie-logo.jpg" alt="Fernkopie Logo" title="Fernkopie Logo">
 				<a href="<?php echo esc_url( $link_plakat ); ?>">
 					<p class="l-center-text l-uppercase vh4">Archiv Plakate</p>
 					<div class="row">
@@ -85,7 +85,7 @@ if ( $slug_this_page == 'editorial' ) {
 				
 		<?php if ( $slug_this_page != 'briefmarken' ) : ?>		
 			<div class="col-xs-4 archiv-selection-col <?php echo $additional_class_briefmarken; ?>">
-				<img class="logo l-center-img is-displayed-lg" src="<?php bloginfo('stylesheet_directory'); ?>/assets/img/fernkopie-logo.jpg" alt="Fernkopie Logo" title="Fernkopie Logo">
+				<img class="logo l-center-img is-displayed-sm" src="<?php bloginfo('stylesheet_directory'); ?>/assets/img/fernkopie-logo.jpg" alt="Fernkopie Logo" title="Fernkopie Logo">
 				<a href="<?php echo esc_url( $link_briefmarken ); ?>">
 					<p class="l-center-text l-uppercase vh4">Archiv Briefmarken</p>
 					<div class="row">
