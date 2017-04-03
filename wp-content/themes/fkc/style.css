@@ -282,10 +282,16 @@ a:hover, a:active, a:focus, a:visited {
 
 /* DUPLICATION! #projectsheader und #content-section-header mergen! */
 #projectsheader {
-  margin-bottom: 5px; }
+  margin-bottom: 0; }
+
+#projectsheader .vh1 {
+  margin-bottom: 0; }
+
+#projectsheader .vh2 {
+  margin-top: 0; }
 
 #selected-projects {
-  margin-bottom: 20px; }
+  margin-bottom: 30px; }
 
 #selected-projects-home {
   margin-top: 3px;
@@ -298,9 +304,49 @@ a:hover, a:active, a:focus, a:visited {
 #content-section-header {
   margin-bottom: 15px; }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 768px) {
   #content-section-header {
+    margin-bottom: 30px; } }
+#content-section-header .vh1 {
+  margin-bottom: 0; }
+
+#content-section-header .vh2 {
+  margin-top: 0; }
+
+.additional-project-header {
+  margin-top: 20px;
+  margin-bottom: 30px; }
+
+#archivheader {
+  margin-bottom: 15px; }
+
+@media screen and (min-width: 768px) {
+  #archivheader {
     margin-bottom: 50px; } }
+#archivheader .vh1 {
+  margin-bottom: 0; }
+
+#archivheader .vh2 {
+  margin-top: 0; }
+
+#epublishing-header {
+  margin-bottom: 15px; }
+
+@media screen and (min-width: 768px) {
+  #epublishing-header {
+    margin-bottom: 30px; } }
+#epublishing-header .vh1 {
+  margin-bottom: 0; }
+
+#epublishing-header .vh2 {
+  margin-top: 0; }
+
+@media screen and (min-width: 768px) {
+  .epublishing-text-right {
+    padding-left: 25px; } }
+.epublishing-contact {
+  text-align: center; }
+
 #projects-section {
   margin-bottom: 30px; }
 
@@ -546,7 +592,7 @@ a:hover, a:active, a:focus, a:visited {
 
 .image-counter-circles {
   color: #1D1C1B;
-  font-size: 20px;
+  font-size: 13px;
   padding-bottom: 25px;
   text-align: center; }
 
@@ -797,6 +843,9 @@ a:hover, a:active, a:focus, a:visited {
 @media screen and (min-width: 1200px) {
   .project-details-side-info-pic {
     margin-bottom: 50px; } }
+.main-text .vh6 {
+  margin-top: 15px; }
+
 /* Masonry Styles Module */
 .grid {
   margin: 0 0px; }

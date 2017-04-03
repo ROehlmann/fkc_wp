@@ -38,8 +38,8 @@ $project_category 			= wp_get_post_categories($project_id);
 	<div id="content-section-header" class="container">
 	
 		<div class="row">
-			<div class="col-xs-8 col-lg-10 col-lg-offset-1">
-				<h1 class="vh1 l-bold l-not-bold-md"><?php the_title(); ?></h1>
+			<div class="col-xs-10 col-sm-10 col-sm-offset-1">
+				<h1 class="vh1 l-bold l-not-bold-sm"><?php the_title(); ?></h1>
 				<?php if ( !empty($subheader) ) : ?>
 					<p class="vh2"><?php echo $subheader; ?></p>
 				<?php endif; ?>
@@ -90,7 +90,7 @@ $project_category 			= wp_get_post_categories($project_id);
 				<!-- Empty div required by the Masonry plugin -->
 				<div class="grid-sizer"></div>
 				
-				<div class="grid-item grid-item--size2">
+				<div class="grid-item grid-item--size2 main-text">
 					<p class="vh5"><?php echo $description_main; ?></p>
 					<p class="vh6"><?php echo $facts_main; ?></p>
 				</div><!-- /.grid-item -->
@@ -175,8 +175,8 @@ $project_category 			= wp_get_post_categories($project_id);
 				<?php $more_subheader = get_sub_field('more_subheader');
 				if( !empty($more_subheader) ) : ?>
 					<div class="row">
-						<div class="col-xs-8 col-lg-10 col-lg-offset-1">
-							<p class="vh2"><?php echo $more_subheader; ?></p>
+						<div class="col-xs-10 col-sm-10 col-sm-offset-1">
+							<p class="vh2 l-bold l-not-bold-sm additional-project-header"><?php echo $more_subheader; ?></p>
 						</div><!-- /.col -->
 					</div><!-- /.row -->	
 				<?php endif; ?>
@@ -214,7 +214,7 @@ $project_category 			= wp_get_post_categories($project_id);
 						$more_facts_main = get_sub_field('more_facts_main');
 						if ( !empty($more_description_main) || !empty($more_facts_main) ) : ?>
 						
-							<div class="grid-item grid-item--size2">
+							<div class="grid-item grid-item--size2 main-text">
 								<?php if ( !empty($more_description_main) ) : ?>
 									<p class="vh5"><?php echo $more_description_main; ?></p>
 								<?php endif; ?>
@@ -339,7 +339,7 @@ $project_category 			= wp_get_post_categories($project_id);
 	    	<div class="container">
 	    	
 	    		<hr>
-	    		<p class="vh6">ähnliche Projekte</p>
+	    		<p class="vh3">ähnliche Projekte</p>
 	    		
 	    		<div class="row">
 		    		

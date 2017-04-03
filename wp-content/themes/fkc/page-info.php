@@ -91,7 +91,7 @@ $programmer_email 	= get_field('programmer_email');
 							
 							<li>
 							<?php if ( !empty($name) ) : ?>
-								<p class="vh5">
+								<p class="vh6">
 									<span class="l-bold"><?php echo $name; ?></span><br>
 									<?php if ( !empty($position) ) : ?>
 										<?php echo $position; ?><br>

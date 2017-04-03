@@ -58,7 +58,7 @@
 			'disableScrolling': false,	
 			'alwaysShowNavOnTouchDevices': false,	
 			'wrapAround': true,
-			'albumLabel': "%1 | %2",
+			'albumLabel': "",
 			'maxWidth': 1410,
 			'maxHeight': 600,
 			'positionFromTop': 100

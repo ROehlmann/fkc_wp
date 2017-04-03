@@ -23,8 +23,8 @@ $contact_us 		= get_field('contact_us');
 		<!-- ePublishing HEADER
 		===================================================== -->
 		<div id="epublishing-header" class="row">
-			<div class="col-xs-8 col-xs-offset-1">
-				<h1 class="vh1 l-bold l-not-bold-md"><?php echo $title; ?></h1>
+			<div class="col-xs-10 col-sm-10 col-sm-offset-1">
+				<h1 class="vh1 l-bold l-not-bold-sm"><?php echo $title; ?></h1>
 				<p class="vh2"><?php echo $subtitle; ?></p>
 			</div><!-- /.col -->
 		</div><!-- /.row -->
@@ -45,23 +45,23 @@ $contact_us 		= get_field('contact_us');
 						
 					<?php if ( $layout == "pic_left") : ?>
 
-						<div class="col-xs-4">
+						<div class="col-xs-6 col-xs-offset-2 col-sm-4 col-sm-offset-1 ">
 							<?php if ( !empty($pic) ) : ?>
 								<img src="<?php echo $pic['url']; ?>" alt="<?php echo $pic['alt']; ?>">
 							<?php endif; ?>
 						</div><!-- /.col -->
 						
-						<div class="col-xs-6">
-							<p class="vh2"><?php echo $text; ?></p>
+						<div class="col-xs-12 col-sm-5">
+							<p class="vh2 epublishing-text-right"><?php echo $text; ?></p>
 						</div><!-- /.col -->
 
 					<?php elseif ( $layout == "pic_right") : ?>
 
-						<div class="col-xs-5 col-xs-offset-1">
-							<p class="vh2"><?php echo $text; ?></p>
+						<div class="col-xs-12 col-sm-5 col-sm-offset-2">
+							<p class="vh2 epublishing-text-left"><?php echo $text; ?></p>
 						</div><!-- /.col -->
 						
-						<div class="col-xs-5">
+						<div class="col-xs-6 col-xs-offset-2 col-sm-4">
 							<?php if ( !empty($pic) ) : ?>
 								<img src="<?php echo $pic['url']; ?>" alt="<?php echo $pic['alt']; ?>">
 							<?php endif; ?>
@@ -83,7 +83,7 @@ $contact_us 		= get_field('contact_us');
 		===================================================== -->
 		<div class="row">
 			<div class="col-xs-4 col-xs-offset-4">
-				<p class="vh2"><?php echo $contact_us; ?></p>
+				<p class="vh2 epublishing-contact"><?php echo $contact_us; ?></p>
 			</div><!-- /.col -->
 		</div><!-- /.row -->		
 		

@@ -161,12 +161,16 @@ dass die besten Lösungen an der Schnittstelle von inhaltlicher Auseinandersetzu
 						<h2 class="l-center-text vh1">E-Publishing</h2>
 						<p class="l-center-text vh6">effizient. zeitgemäß. interaktiv.</p>
 					</div><!-- /.e-publishing-header -->
+					
+				</div><!-- /.col -->
+				
+				<div class="col-xs-12 col-sm-8 col-sm-offset-2">
 					<div class="e-publishing-img">
 						<img class="l-allow-overscaling" src="<?php bloginfo('stylesheet_directory'); ?>/assets/img/fernkopie_epublish_home.png" alt="Ein Bild, das den Prozess zeigt, wie aus einer Print-Datei eine Smartphone-App wird.">			
 					</div><!-- /.e-publishing-img -->
 				</div><!-- /.col -->
 					
-				<div class="col-xs-12 col-lg-8 col-lg-offset-2">
+				<div class="col-xs-12 col-sm-10 col-sm-offset-1">
 					
 					<div class="e-publishing-text">
 						<p class="l-center-text vh2">Wir erstellen aus Ihren Printprodukten interaktive Erlebnisse für Tablets. Dabei werden vorhandene ­InDesign-Dateien überarbeitet und um neue Dimensionen erweitert, wie z. B. 360°-Ansichten, Hyperlinks, ­Diashows, Audio- und Video-Dateien. Als Ergebnis erhalten Sie eine App für mobile Endgeräte.</p>
