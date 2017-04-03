@@ -34,15 +34,13 @@ get_header(); ?>
 		<div class="container">
 			
 			<div class="row">
-				<div class="col-xs-8 col-lg-10 col-lg-offset-1">
-					<div class="leistungsspektrum">
+				<div class="leistungsspektrum col-xs-12">
 						<p class="vh1">
 							Wir gestalten 
 							<a href="<?php echo esc_url( $link_vis_ident ); ?>">visuelle Identitäten</a>,
 							<a href="<?php echo esc_url( $link_info_med ); ?>">Informationsmedien</a> und 
 							<a href="<?php echo esc_url( $link_schrift_raum ); ?>">Schrift im Raum</a>.
 						</p>
-					</div><!-- /.leistungsspektrum -->
 				</div><!-- /.col -->
 			</div><!-- /.row -->
 			

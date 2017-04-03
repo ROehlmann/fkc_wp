@@ -59,7 +59,7 @@ get_header(); ?>
 						<p class="l-center-text l-uppercase vh4"><span class="l-bold">Archiv</span><br>Editorial</p>
 						<div class="row">
 							<div class="col-lg-8 col-lg-offset-2">
-								<img class="l-center-img" src="<?php bloginfo('stylesheet_directory'); ?>/assets/img/beispielbilder/belin-1.jpg" alt="">
+								<img class="l-center-img" src="<?php bloginfo('stylesheet_directory'); ?>/assets/img/titelbild-archiv-editorial.jpg" alt="">
 							</div><!-- /.col -->
 						</div><!-- /.row -->
 					</a>
@@ -70,7 +70,7 @@ get_header(); ?>
 						<p class="l-center-text l-uppercase vh4"><span class="l-bold">Archiv</span><br>Plakate</p>
 						<div class="row">
 							<div class="col-lg-8 col-lg-offset-2">
-								<img class="l-center-img" src="<?php bloginfo('stylesheet_directory'); ?>/assets/img/beispielbilder/belin-2.jpg" alt="">
+								<img class="l-center-img" src="<?php bloginfo('stylesheet_directory'); ?>/assets/img/titelbild-archiv-plakat.jpg" alt="">
 							</div><!-- /.col -->
 						</div><!-- /.row -->
 					</a>
@@ -81,7 +81,7 @@ get_header(); ?>
 						<p class="l-center-text l-uppercase vh4"><span class="l-bold">Archiv</span><br>Briefmarken</p>
 						<div class="row">
 							<div class="col-lg-8 col-lg-offset-2">
-								<img class="l-center-img" src="<?php bloginfo('stylesheet_directory'); ?>/assets/img/beispielbilder/belin-3.jpg" alt="">
+								<img class="l-center-img" src="<?php bloginfo('stylesheet_directory'); ?>/assets/img/titelbild-archiv-briefmarken.jpg" alt="">
 							</div><!-- /.col -->
 						</div><!-- /.row -->
 					</a>

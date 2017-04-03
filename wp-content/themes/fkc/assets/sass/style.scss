@@ -927,6 +927,18 @@ a:hover, a:active, a:focus, a:visited {
    
 /* Leistungsspektrum Module */
 /* Weiter generalisieren und wiederverwende, wenn andere Sections ähnlich aufgebaut sind */
+@media screen and (min-width: 500px) {
+	.leistungsspektrum {
+		width: 83.33333333%;
+	}
+}
+
+@media screen and (min-width: 615px) {
+	.leistungsspektrum {
+		width: 66.66666667%;
+	}
+}
+
 .leistungsspektrum a {
 	border-bottom: 1px solid $color-black;
 }
@@ -936,6 +948,15 @@ a:hover, a:active, a:focus, a:visited {
 	border-bottom: none;
 	text-decoration: none;
 }
+
+.nav-categories > p > a {
+	text-decoration: none;
+	border-bottom: 1px solid $color-black;
+}
+.nav-categories > p > a:hover {
+	border-bottom: none;
+}
+
 
 
 /* E-Publishing Section Module */
@@ -978,11 +999,32 @@ a:hover, a:active, a:focus, a:visited {
 .archiv-selection-col:first-child {
 	border-left: none;
 }
+
+.archiv-selection .logo-centered {
+	margin-bottom: 7px;
+}
+
+.archiv-selection-col > img {
+	width: 120px;
+	height: auto;
+	margin-bottom: 7px;
+}
+
 @media screen and (min-width: 1200px) {
 	.archiv-selection-col.no-border-lg {
 		border: none;
 	}
 }
+
+@media screen and (min-width: 1600px) {
+	.archiv-selection-col p {
+		font-size: 14px;
+		line-height: 19px;
+		letter-spacing: 1.8px;
+	}
+}
+
+
 
 
 

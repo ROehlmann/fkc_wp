@@ -49,7 +49,7 @@ if ( $slug_this_page == 'editorial' ) {
 	
 	<div class="row is-hidden-lg">
 		<div class="col-xs-12">
-			<a href="#"><img class="logo l-center-img" src="<?php bloginfo('stylesheet_directory'); ?>/assets/img/fernkopie-logo.jpg" alt="Fernkopie Logo" title="Fernkopie Logo"></a>
+			<a href="#"><img class="logo logo-centered l-center-img" src="<?php bloginfo('stylesheet_directory'); ?>/assets/img/fernkopie-logo.jpg" alt="Fernkopie Logo" title="Fernkopie Logo"></a>
 		</div><!-- /.col -->
 	</div><!-- /.row -->
 	
@@ -62,7 +62,7 @@ if ( $slug_this_page == 'editorial' ) {
 						<p class="l-center-text l-uppercase vh4">Archiv Editorial</p>
 						<div class="row">
 							<div class="col-lg-4 col-lg-offset-4">
-								<img class="l-center-img" src="<?php bloginfo('stylesheet_directory'); ?>/assets/img/beispielbilder/belin-1.jpg" alt="">
+								<img class="l-center-img" src="<?php bloginfo('stylesheet_directory'); ?>/assets/img/titelbild-archiv-editorial.jpg" alt="">
 							</div><!-- /.col -->
 						</div><!-- /.row -->
 					</a>
@@ -76,7 +76,7 @@ if ( $slug_this_page == 'editorial' ) {
 					<p class="l-center-text l-uppercase vh4">Archiv Plakate</p>
 					<div class="row">
 						<div class="col-lg-4 col-lg-offset-4">
-							<img class="l-center-img" src="<?php bloginfo('stylesheet_directory'); ?>/assets/img/beispielbilder/belin-2.jpg" alt="">
+							<img class="l-center-img" src="<?php bloginfo('stylesheet_directory'); ?>/assets/img/titelbild-archiv-plakat.jpg" alt=""> 
 						</div><!-- /.col -->
 					</div><!-- /.row -->
 				</a>
@@ -90,7 +90,7 @@ if ( $slug_this_page == 'editorial' ) {
 					<p class="l-center-text l-uppercase vh4">Archiv Briefmarken</p>
 					<div class="row">
 						<div class="col-lg-4 col-lg-offset-4">
-							<img class="l-center-img" src="<?php bloginfo('stylesheet_directory'); ?>/assets/img/beispielbilder/belin-3.jpg" alt="">
+							<img class="l-center-img" src="<?php bloginfo('stylesheet_directory'); ?>/assets/img/titelbild-archiv-briefmarken.jpg" alt="">
 						</div><!-- /.col -->
 					</div><!-- /.row -->
 				</a>
