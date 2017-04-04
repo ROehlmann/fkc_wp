@@ -387,12 +387,18 @@ a:hover, a:active, a:focus, a:visited {
 .l-pull-left {
   float: left; }
 
+@media screen and (min-width: 768px) {
+  .l-pull-left-sm {
+    float: left; } }
 .l-clear-left {
   clear: left; }
 
 .l-pull-right {
   float: right; }
 
+@media screen and (min-width: 768px) {
+  .l-pull-right-sm {
+    float: right; } }
 .l-clear-right {
   clear: right; }
 

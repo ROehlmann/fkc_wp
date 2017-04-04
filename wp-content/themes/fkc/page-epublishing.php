@@ -57,14 +57,18 @@ $contact_us 		= get_field('contact_us');
 
 					<?php elseif ( $layout == "pic_right") : ?>
 
-						<div class="col-xs-12 col-sm-5 col-sm-offset-2">
-							<p class="vh2 epublishing-text-left"><?php echo $text; ?></p>
+						<div class="col-xs-6 col-xs-offset-2 col-sm-5 col-sm-offset-0 l-pull-right-sm">
+							<div class="row">
+								<div class="col-sm-9 l-pull-left-sm">
+									<?php if ( !empty($pic) ) : ?>
+										<img src="<?php echo $pic['url']; ?>" alt="<?php echo $pic['alt']; ?>">
+									<?php endif; ?>
+								</div><!-- /.col -->
+							</div><!-- /.row -->
 						</div><!-- /.col -->
 						
-						<div class="col-xs-6 col-xs-offset-2 col-sm-4">
-							<?php if ( !empty($pic) ) : ?>
-								<img src="<?php echo $pic['url']; ?>" alt="<?php echo $pic['alt']; ?>">
-							<?php endif; ?>
+						<div class="col-xs-12 col-sm-5 col-sm-offset-2">
+							<p class="vh2 epublishing-text-left"><?php echo $text; ?></p>
 						</div><!-- /.col -->
 					
 					<?php endif; ?>
