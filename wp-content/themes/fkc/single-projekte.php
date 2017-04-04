@@ -350,7 +350,7 @@ $project_category 			= wp_get_post_categories($project_id);
 				    	$project_title							= get_field('project_title'); ?>
 				    	
 				    	<div class="col-xs-6 col-md-4 similar-project">
-							<figure class="gallery-item">
+							<figure class="gallery-item gallery-item-similar-projects">
 								<a href="<?php echo get_permalink();?>" >
 									<img src="<?php echo $pic_for_similar_projects_section['url']; ?>" alt="<?php echo $pic_for_similar_projects_section['alt']; ?>" >
 									<figcaption>

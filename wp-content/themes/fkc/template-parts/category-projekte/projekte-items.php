@@ -38,7 +38,7 @@ if ( $query_featured_projects->have_posts() ) : ?>
 		    ?>
 	
 			<div class="grid-item grid-item--size2 grid-item--small-border">
-				<figure class="gallery-item">
+				<figure class="gallery-item gallery-item-project-selection">
 					<a href="<?php echo get_permalink();?>" >
 						<img src="<?php echo $feature_image['url']; ?>" alt="<?php echo $feature_image['alt']; ?>" >
 						<figcaption>
