@@ -15,8 +15,7 @@
 	$query_featured_projects = new WP_Query( $args );
 	
 	//Display the contents
-	if ( $query_featured_projects->have_posts() ) : 
-		$num_images = 1; ?>
+	if ( $query_featured_projects->have_posts() ) : ?>
 	    
 	    <div class="row">
 		    
@@ -25,6 +24,7 @@
 				$featured_customer = get_field('featured_customer');
 				$featured_project = get_field('featured_project');
 				$featured_year = get_field('featured_year'); 
+				$num_images = 1; 
 		    ?>
 	    		
 	    		<div class="col-xs-6 col-lg-3">
@@ -77,9 +77,11 @@
 						<?php endwhile; ?>
 					<?php endif; ?>
 				  
-					<?php if ( $num_images > 1 ) : ?>
-						
-						<div class="image-counter-circles">
+				  
+					<div class="image-counter-circles">
+						<?php if ( $num_images == 1 ) : ?>
+							<span class="dot-white">&#8226</span>
+						<?php else : ?>
 							
 							<?php if ( $num_images == 2 ) : ?>
 								<span>&#8226</span> <span class="dot-gray">&#8226</span>
@@ -93,12 +95,10 @@
 							
 							<?php elseif ( $num_images >= 5 ) : ?>
 								<span>&#8226</span> <span class="dot-gray">&#8226</span> <span class="dot-gray">&#8226</span> <span class="dot-gray">&#8226</span> <span class="dot-gray">&#8226</span>
-	
 							<?php endif; ?>
 							
-						</div><!-- /.number-of-images -->
-					
-					<?php endif; ?>
+						<?php endif; ?>
+					</div><!-- /.image-counter-circles -->
 				</div><!-- /.col -->				
 				    
 		    <?php endwhile; ?>

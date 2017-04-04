@@ -846,7 +846,9 @@ a:hover, a:active, a:focus, a:visited {
 .image-counter-circles > .dot-gray {
 	color: $color-darkgray
 }
-
+.image-counter-circles > .dot-white {
+	color: $color-white;
+}
 
 
 /* Nav-Categories (the small navigation element showing only the categories in large-screen mode */

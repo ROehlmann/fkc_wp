@@ -605,6 +605,9 @@ a:hover, a:active, a:focus, a:visited {
 .image-counter-circles > .dot-gray {
   color: #9B9B9B; }
 
+.image-counter-circles > .dot-white {
+  color: #FFFFFF; }
+
 /* Nav-Categories (the small navigation element showing only the categories in large-screen mode */
 .navbar-left {
   display: inline; }
